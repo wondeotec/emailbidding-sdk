@@ -11,7 +11,7 @@
 
 namespace EB\SDK\Webhook;
 
-use Guzzle\Http\Client;
+use GuzzleHttp\Client;
 
 /**
  * Webhook
@@ -32,10 +32,11 @@ class Webhook
     }
 
     /**
-     * @param Payload $payload
-     * @param string  $endpoint
+     * @param Payload $payload The Emailbidding payload
+     * @param string  $endpoint The endpoint where to the Emailbidding payload should be sent
      *
-     * @throws \Exception
+     * @return int The HTTP response
+     * @throws \Exception An exception if the payload has errors
      */
     public function post(Payload $payload, $endpoint)
     {
@@ -48,8 +49,8 @@ class Webhook
             'body'    => json_encode($payload)
         ];
 
-        var_dump(json_encode($payload));die;
+        $response = $this->guzzleClient->post($endpoint, $requestContent);
 
-        $this->guzzleClient->post($endpoint, $requestContent);
+        return $response->getResponse()->getStatusCode();
     }
 }
