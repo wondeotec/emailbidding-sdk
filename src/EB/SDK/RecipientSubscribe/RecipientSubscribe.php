@@ -76,7 +76,7 @@ class RecipientSubscribe
      * @returns bool
      * @throws \Exception
      */
-    public function post(array $recipients, $listExternalId, $publisherId)
+    public function post(array $recipients, $publisherId, $listExternalId)
     {
         $recipientsCount = count($recipients);
         if ($recipientsCount == 0) {
