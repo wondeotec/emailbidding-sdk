@@ -9,10 +9,10 @@
  * @license   LICENSE.txt
  */
 
-namespace EB\RecipientSubscribeClient\Validators;
+namespace EB\SDK\Validators;
 
 /**
- * DataValidator<
+ * DataValidator
  */
 class DataValidator
 {

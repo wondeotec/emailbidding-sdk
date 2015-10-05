@@ -170,7 +170,7 @@ class Payload implements \JsonSerializable
      */
     public function setReason($reason)
     {
-        if (! Type::isValidWebhookType($reason)) {
+        if (! Type::isValidReason($reason)) {
             throw new \Exception(sprintf('The action "%s" isn\'t supported!', $reason));
         }
 
