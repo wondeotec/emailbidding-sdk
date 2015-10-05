@@ -32,10 +32,12 @@ class Webhook
     }
 
     /**
+     * Makes a request identical to the Emailbidding webhook event
+     *
      * @param Payload $payload The Emailbidding payload
      * @param string  $endpoint The endpoint where to the Emailbidding payload should be sent
      *
-     * @return int The HTTP response
+     * @return \GuzzleHttp\Message\ResponseInterface
      * @throws \Exception An exception if the payload has errors
      */
     public function post(Payload $payload, $endpoint)

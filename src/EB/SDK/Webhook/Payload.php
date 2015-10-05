@@ -16,7 +16,7 @@ namespace EB\SDK\Webhook;
 /**
  * Payload
  */
-class Payload
+class Payload implements \JsonSerializable
 {
     /**
      * @var string The event IP address
