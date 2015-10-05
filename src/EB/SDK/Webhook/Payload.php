@@ -19,52 +19,52 @@ namespace EB\SDK\Webhook;
 class Payload
 {
     /**
-     * @var string
+     * @var string The event IP address
      */
     protected $ipAddress;
 
     /**
-     * @var string
+     * @var string The action
      */
     protected $action;
 
     /**
-     * @var int
+     * @var int The Emailbidding campaign Id where this event relates to
      */
     protected $campaignId;
 
     /**
-     * @var string
+     * @var string The recipient list external Id (publisher's database Id)
      */
     protected $listExternalId;
 
     /**
-     * @var string
+     * @var string The reason of the event
      */
     protected $reason;
 
     /**
-     * @var string
+     * @var string The recipient email address
      */
     protected $recipientEmailAddress;
 
     /**
-     * @var string
+     * @var string The recipient email address hash
      */
     protected $hash;
 
     /**
-     * @var string
+     * @var string The recipient external Id (Id in the publisher's database)
      */
     protected $recipientExternalId;
 
     /**
-     * @var \DateTime
+     * @var \DateTime The event date
      */
     protected $triggerDate;
 
     /**
-     * @var string
+     * @var string The event type
      */
     protected $type;
 
@@ -84,6 +84,8 @@ class Payload
     public function setIpAddress($ipAddress)
     {
         $this->ipAddress = $ipAddress;
+
+        return $this;
     }
 
     /**
@@ -102,6 +104,8 @@ class Payload
     public function setAction($action)
     {
         $this->action = $action;
+
+        return $this;
     }
 
     /**
@@ -120,6 +124,8 @@ class Payload
     public function setCampaignId($campaignId)
     {
         $this->campaignId = $campaignId;
+
+        return $this;
     }
 
     /**
@@ -138,6 +144,8 @@ class Payload
     public function setListExternalId($listExternalId)
     {
         $this->listExternalId = $listExternalId;
+
+        return $this;
     }
 
     /**
@@ -156,6 +164,8 @@ class Payload
     public function setReason($reason)
     {
         $this->reason = $reason;
+
+        return $this;
     }
 
     /**
@@ -174,6 +184,8 @@ class Payload
     public function setRecipientEmailAddress($recipientEmailAddress)
     {
         $this->recipientEmailAddress = $recipientEmailAddress;
+
+        return $this;
     }
 
     /**
@@ -192,6 +204,8 @@ class Payload
     public function setHash($hash)
     {
         $this->hash = $hash;
+
+        return $this;
     }
 
     /**
@@ -210,6 +224,8 @@ class Payload
     public function setRecipientExternalId($recipientExternalId)
     {
         $this->recipientExternalId = $recipientExternalId;
+
+        return $this;
     }
 
     /**
@@ -228,6 +244,8 @@ class Payload
     public function setTriggerDate(\DateTime $triggerDate)
     {
         $this->triggerDate = $triggerDate;
+
+        return $this;
     }
 
     /**
