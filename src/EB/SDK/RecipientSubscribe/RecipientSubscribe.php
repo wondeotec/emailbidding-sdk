@@ -12,6 +12,7 @@
 namespace EB\SDK\RecipientSubscribe;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 
 /**
  * RecipientSubscribe
@@ -94,10 +95,20 @@ class RecipientSubscribe
                 'timeout' => self::DEFAULT_REQUEST_TIMEOUT
             ];
 
-            $response = $this->guzzleClient->post(
-                $this->getApiEndpoint($publisherId, $listExternalId),
-                $requestContent
-            );
+            $response = null;
+            try {
+                $response = $this->guzzleClient->post(
+                    $this->getApiEndpoint($publisherId, $listExternalId),
+                    $requestContent
+                );
+            } catch (ClientException $guzzleException) {
+                if ($guzzleException->getCode() == 400) {
+                    throw new \Exception('Some errors found on this recipient submission: ' . $this->processErrors(
+                        $guzzleException->getResponse()->getBody()->getContents()
+                    ));
+                }
+                throw new \Exception('An expected error occurred: ' . $guzzleException->getMessage());
+            }
 
             // If we do not have a success response, let us process the error a message and throw it as an error
             if ($response->getStatusCode() != self::SUCCESS_HTTP_CODE) {
