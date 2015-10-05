@@ -49,8 +49,6 @@ class Webhook
             'body'    => json_encode($payload)
         ];
 
-        $response = $this->guzzleClient->post($endpoint, $requestContent);
-
-        return $response->getResponse()->getStatusCode();
+        return $this->guzzleClient->post($endpoint, $requestContent);
     }
 }
