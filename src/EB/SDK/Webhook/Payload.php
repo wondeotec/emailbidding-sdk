@@ -100,9 +100,14 @@ class Payload implements \JsonSerializable
      * @param string $action
      *
      * @return Payload
+     * @throws \Exception
      */
     public function setAction($action)
     {
+        if (! Type::isValidWebhookType($action)) {
+            throw new \Exception(sprintf('The action "%s" isn\'t supported!', $action));
+        }
+
         $this->action = $action;
 
         return $this;
@@ -160,9 +165,15 @@ class Payload implements \JsonSerializable
      * @param string $reason
      *
      * @return Payload
+     *
+     * @throws \Exception
      */
     public function setReason($reason)
     {
+        if (! Type::isValidWebhookType($reason)) {
+            throw new \Exception(sprintf('The action "%s" isn\'t supported!', $reason));
+        }
+
         $this->reason = $reason;
 
         return $this;
@@ -260,9 +271,14 @@ class Payload implements \JsonSerializable
      * @param string $type
      *
      * @return Payload
+     * @throws \Exception
      */
     public function setType($type)
     {
+        if (! Type::isValidWebhookType($type)) {
+            throw new \Exception(sprintf('The action "%s" isn\'t supported!', $type));
+        }
+
         $this->type = $type;
 
         return $this;

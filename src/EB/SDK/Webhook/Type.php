@@ -69,6 +69,14 @@ class Type
     );
 
     /**
+     * @var array All Emailbidding webhook reasons
+     */
+    protected static $reasons = array(
+        self::REASON_USER_REQUEST,
+        self::REASON_SYSTEM_AUTOMATIC
+    );
+
+    /**
      * @param string $webhookType The webhook type
      *
      * @return bool Returns true if the webhook type is valid, false otherwise
@@ -76,5 +84,15 @@ class Type
     public static function isValidWebhookType($webhookType)
     {
         return in_array($webhookType, self::$webhookTypes);
+    }
+
+    /**
+     * @param string $webhookReason The webhook reason
+     *
+     * @return bool Returns true if the webhook reason is valid, false otherwise
+     */
+    public static function isValidReason($webhookReason)
+    {
+        return in_array($webhookReason, self::$reasons);
     }
 }

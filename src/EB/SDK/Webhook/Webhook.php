@@ -19,6 +19,11 @@ use GuzzleHttp\Client;
 class Webhook
 {
     /**
+     * The default max request timeout in seconds
+     */
+    const DEFAULT_REQUEST_TIMEOUT = 60;
+
+    /**
      * @var Client The guzzle client to make POST HTTP requests
      */
     protected $guzzleClient;
@@ -48,7 +53,8 @@ class Webhook
 
         $requestContent = [
             'headers' => ['Content-Type' => 'application/json'],
-            'body'    => json_encode($payload)
+            'body'    => json_encode($payload),
+            'timeout' => self::DEFAULT_REQUEST_TIMEOUT
         ];
 
         return $this->guzzleClient->post($endpoint, $requestContent);
