@@ -23,6 +23,6 @@
     "satooshi/php-coveralls": "dev-master"
   },
   "autoload": {
-    "psr-0": { "EB\\SDK\\Webhook": "src/" }
+    "psr-0": { "EB\\SDK": "src/" }
   }
 }
