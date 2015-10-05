@@ -1,5 +1,5 @@
 {
-  "name": "wondeotech/emailbidding-sdk",
+  "name": "wondeotec/emailbidding-sdk",
   "type": "library",
   "description": "Collection of scripts to allow interactions with Emailbidding API",
   "keywords": ["php", "api", "emailbidding", "sdk"],
