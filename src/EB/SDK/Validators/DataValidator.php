@@ -44,9 +44,9 @@ trait DataValidator
             throw new \Exception('Issue detected on resources!');
         }
 
-        $this->availableGenders = $data['gender'];
-        $this->availableCountries = $data['country'];
-        $this->availableLanguages = $data['language'];
+        $this->availableGenders = array_keys($data['gender']);
+        $this->availableCountries = array_keys($data['country']);
+        $this->availableLanguages = array_keys($data['language']);
     }
 
     /**

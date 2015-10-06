@@ -320,7 +320,7 @@ class Recipient implements \JsonSerializable
     public function setCountry($country)
     {
         if (! $this->isValidCountry($country)) {
-            throw new \Exception('The country code "%s" isn\'t valid!');
+            throw new \Exception(sprintf('The country code "%s" isn\'t valid!', $country));
         }
 
         $this->country = $country;
@@ -699,7 +699,7 @@ class Recipient implements \JsonSerializable
     public function setLanguage($language)
     {
         if (! $this->isValidLanguage($language)) {
-            throw new \Exception('The language code "%s" isn\'t valid!');
+            throw new \Exception(sprintf('The language code "%s" isn\'t valid!', $language));
         }
 
         $this->language = $language;
