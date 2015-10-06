@@ -11,13 +11,18 @@
 
 namespace EB\SDK\Webhook;
 
-use Guzzle\Http\Client;
+use GuzzleHttp\Client;
 
 /**
  * Webhook
  */
 class Webhook
 {
+    /**
+     * The default max request timeout in seconds
+     */
+    const DEFAULT_REQUEST_TIMEOUT = 60;
+
     /**
      * @var Client The guzzle client to make POST HTTP requests
      */
@@ -32,10 +37,13 @@ class Webhook
     }
 
     /**
-     * @param Payload $payload
-     * @param string  $endpoint
+     * Makes a request identical to the Emailbidding webhook event
      *
-     * @throws \Exception
+     * @param Payload $payload The Emailbidding payload
+     * @param string  $endpoint The endpoint where to the Emailbidding payload should be sent
+     *
+     * @return \GuzzleHttp\Message\ResponseInterface
+     * @throws \Exception An exception if the payload has errors
      */
     public function post(Payload $payload, $endpoint)
     {
@@ -45,11 +53,10 @@ class Webhook
 
         $requestContent = [
             'headers' => ['Content-Type' => 'application/json'],
-            'body'    => json_encode($payload)
+            'body'    => json_encode($payload),
+            'timeout' => self::DEFAULT_REQUEST_TIMEOUT
         ];
 
-        var_dump(json_encode($payload));die;
-
-        $this->guzzleClient->post($endpoint, $requestContent);
+        return $this->guzzleClient->post($endpoint, $requestContent);
     }
 }

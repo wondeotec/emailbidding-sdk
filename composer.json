@@ -1,5 +1,5 @@
 {
-  "name": "wondeotech/emailbidding-sdk",
+  "name": "wondeotec/emailbidding-sdk",
   "type": "library",
   "description": "Collection of scripts to allow interactions with Emailbidding API",
   "keywords": ["php", "api", "emailbidding", "sdk"],
@@ -14,7 +14,8 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=5.4",
-    "guzzlehttp/guzzle": "4.*"
+    "guzzlehttp/guzzle": "4.*",
+    "symfony/yaml": "2.7.5"
   },
   "require-dev": {
     "phpunit/phpunit": "3.7.*",
@@ -23,6 +24,6 @@
     "satooshi/php-coveralls": "dev-master"
   },
   "autoload": {
-    "psr-0": { "EBT\\CommonObject": "src/" }
+    "psr-0": { "EB\\SDK": "src/" }
   }
 }
