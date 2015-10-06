@@ -11,11 +11,15 @@
 
 namespace EB\SDK\RecipientSubscribe;
 
+use EB\SDK\Validators\DataValidator;
+
 /**
  * Recipient
  */
 class Recipient implements \JsonSerializable
 {
+    use DataValidator;
+
     /**
      * @var string A valid email address
      */
@@ -158,9 +162,15 @@ class Recipient implements \JsonSerializable
      * @param string $emailAddress
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setEmailAddress($emailAddress)
     {
+        if (! DataValidator::isEmailValid($emailAddress)) {
+            throw new \Exception(sprintf('The email address "%s" isn\'t valid!', $emailAddress));
+        }
+
         $this->emailAddress = $emailAddress;
 
         return $this;
@@ -258,9 +268,15 @@ class Recipient implements \JsonSerializable
      * @param string $ipAddress
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setIpAddress($ipAddress)
     {
+        if (! DataValidator::isIPAddressValid($ipAddress)) {
+            throw new \Exception(sprintf('The IP address "%" is not valid!', $ipAddress));
+        }
+
         $this->ipAddress = $ipAddress;
 
         return $this;
@@ -298,9 +314,15 @@ class Recipient implements \JsonSerializable
      * @param string $country
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setCountry($country)
     {
+        if (! $this->isValidCountry($country)) {
+            throw new \Exception('The country code "%s" isn\'t valid!');
+        }
+
         $this->country = $country;
 
         return $this;
@@ -318,9 +340,15 @@ class Recipient implements \JsonSerializable
      * @param string $gender
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setGender($gender)
     {
+        if ($this->isValidGender($gender)) {
+            throw new \Exception(sprintf('The gender "%s" is not valid!', $gender));
+        }
+
         $this->gender = $gender;
 
         return $this;
@@ -538,9 +566,16 @@ class Recipient implements \JsonSerializable
      * @param string $unsubscriptionIp
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setUnsubscriptionIp($unsubscriptionIp)
     {
+
+        if (! DataValidator::isIPAddressValid($unsubscriptionIp)) {
+            throw new \Exception(sprintf('The IP address "%" is not valid!', $unsubscriptionIp));
+        }
+
         $this->unsubscriptionIp = $unsubscriptionIp;
 
         return $this;
@@ -658,9 +693,15 @@ class Recipient implements \JsonSerializable
      * @param string $language
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setLanguage($language)
     {
+        if (! $this->isValidLanguage($language)) {
+            throw new \Exception('The language code "%s" isn\'t valid!');
+        }
+
         $this->language = $language;
 
         return $this;

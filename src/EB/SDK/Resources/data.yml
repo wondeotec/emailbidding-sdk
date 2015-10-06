@@ -1,0 +1,393 @@
+gender:
+    M: { id: 1, name: 'Male' }
+    F: { id: 2, name: 'Female' }
+    NA: { id: 3, name: 'Not Assign' }
+
+country:
+    AF: { id:  1, 'Afghanistan' }
+    AX: { id:  2, 'Aland Islands' }
+    AL: { id:  3, 'Albania' }
+    DZ: { id:  4, 'Algeria' }
+    AS: { id:  5, 'American Samoa' }
+    AD: { id:  6, 'Andorra' }
+    AO: { id:  7, 'Angola' }
+    AI: { id:  8, 'Anguilla' }
+    AQ: { id:  9, 'Antarctica' }
+    AG: { id:  10, 'Antigua and Barbuda' }
+    AR: { id:  11, 'Argentina' }
+    AM: { id:  12, 'Armenia' }
+    AW: { id:  13, 'Aruba' }
+    AU: { id:  14, 'Australia' }
+    AT: { id:  15, 'Austria' }
+    AZ: { id:  16, 'Azerbaijan' }
+    BS: { id:  17, 'Bahamas' }
+    BH: { id:  18, 'Bahrain' }
+    BD: { id:  19, 'Bangladesh' }
+    BB: { id:  20, 'Barbados' }
+    BY: { id:  21, 'Belarus' }
+    BE: { id:  22, 'Belgium' }
+    BZ: { id:  23, 'Belize' }
+    BJ: { id:  24, 'Benin' }
+    BM: { id:  25, 'Bermuda' }
+    BT: { id:  26, 'Bhutan' }
+    BO: { id:  27, 'Bolivia, Plurinational State of' }
+    BQ: { id:  28, 'Bonaire, Sint Eustatius and Saba' }
+    BA: { id:  29, 'Bosnia and Herzegovina' }
+    BW: { id:  30, 'Botswana' }
+    BV: { id:  31, 'Bouvet Island' }
+    BR: { id:  32, 'Brazil' }
+    IO: { id:  33, 'British Indian Ocean Territory' }
+    BN: { id:  34, 'Brunei Darussalam' }
+    BG: { id:  35, 'Bulgaria' }
+    BF: { id:  36, 'Burkina Faso' }
+    BI: { id:  37, 'Burundi' }
+    KH: { id:  38, 'Cambodia' }
+    CM: { id:  39, 'Cameroon' }
+    CA: { id:  40, 'Canada' }
+    CV: { id:  41, 'Cape Verde' }
+    KY: { id:  42, 'Cayman Islands' }
+    CF: { id:  43, 'Central African Republic' }
+    TD: { id:  44, 'Chad' }
+    CL: { id:  45, 'Chile' }
+    CN: { id:  46, 'China' }
+    CX: { id:  47, 'Christmas Island' }
+    CC: { id:  48, 'Cocos (Keeling) Islands' }
+    CO: { id:  49, 'Colombia' }
+    KM: { id:  50, 'Comoros' }
+    CG: { id:  51, 'Congo' }
+    CD: { id:  52, 'Congo, The Democratic Republic of the' }
+    CK: { id:  53, 'Cook Islands' }
+    CR: { id:  54, 'Costa Rica' }
+    CI: { id:  55, 'Cote d\'Ivoire' }
+    HR: { id:  56, 'Croatia' }
+    CU: { id:  57, 'Cuba' }
+    CW: { id:  58, 'Curacao' }
+    CY: { id:  59, 'Cyprus' }
+    CZ: { id:  60, 'Czech Republic' }
+    DK: { id:  61, 'Denmark' }
+    DJ: { id:  62, 'Djibouti' }
+    DM: { id:  63, 'Dominica' }
+    DO: { id:  64, 'Dominican Republic' }
+    EC: { id:  65, 'Ecuador' }
+    EG: { id:  66, 'Egypt' }
+    SV: { id:  67, 'El Salvador' }
+    GQ: { id:  68, 'Equatorial Guinea' }
+    ER: { id:  69, 'Eritrea' }
+    EE: { id:  70, 'Estonia' }
+    ET: { id:  71, 'Ethiopia' }
+    FK: { id:  72, 'Falkland Islands (Malvinas)' }
+    FO: { id:  73, 'Faroe Islands' }
+    FJ: { id:  74, 'Fiji' }
+    FI: { id:  75, 'Finland' }
+    FR: { id:  76, 'France' }
+    GF: { id:  77, 'French Guiana' }
+    PF: { id:  78, 'French Polynesia' }
+    TF: { id:  79, 'French Southern Territories' }
+    GA: { id:  80, 'Gabon' }
+    GM: { id:  81, 'Gambia' }
+    GE: { id:  82, 'Georgia' }
+    DE: { id:  83, 'Germany' }
+    GH: { id:  84, 'Ghana' }
+    GI: { id:  85, 'Gibraltar' }
+    GR: { id:  86, 'Greece' }
+    GL: { id:  87, 'Greenland' }
+    GD: { id:  88, 'Grenada' }
+    GP: { id:  89, 'Guadeloupe' }
+    GU: { id:  90, 'Guam' }
+    GT: { id:  91, 'Guatemala' }
+    GG: { id:  92, 'Guernsey' }
+    GN: { id:  93, 'Guinea' }
+    GW: { id:  94, 'Guinea-Bissau' }
+    GY: { id:  95, 'Guyana' }
+    HT: { id:  96, 'Haiti' }
+    HM: { id:  97, 'Heard Island and McDonald Islands' }
+    VA: { id:  98, 'Holy See (Vatican City State)' }
+    HN: { id:  99, 'Honduras' }
+    HK: { id:  100, 'Hong Kong' }
+    HU: { id:  101, 'Hungary' }
+    IS: { id:  102, 'Iceland' }
+    IN: { id:  103, 'India' }
+    ID: { id:  104, 'Indonesia' }
+    IR: { id:  105, 'Iran, Islamic Republic of' }
+    IQ: { id:  106, 'Iraq' }
+    IE: { id:  107, 'Ireland' }
+    IM: { id:  108, 'Isle of Man' }
+    IL: { id:  109, 'Israel' }
+    IT: { id:  110, 'Italy' }
+    JM: { id:  111, 'Jamaica' }
+    JP: { id:  112, 'Japan' }
+    JE: { id:  113, 'Jersey' }
+    JO: { id:  114, 'Jordan' }
+    KZ: { id:  115, 'Kazakhstan' }
+    KE: { id:  116, 'Kenya' }
+    KI: { id:  117, 'Kiribati' }
+    KP: { id:  118, 'Korea, Democratic People Republic of' }
+    KR: { id:  119, 'Korea, Republic of' }
+    KW: { id:  120, 'Kuwait' }
+    KG: { id:  121, 'Kyrgyzstan' }
+    LA: { id:  122, 'Lao People Democratic Republic' }
+    LV: { id:  123, 'Latvia' }
+    LB: { id:  124, 'Lebanon' }
+    LS: { id:  125, 'Lesotho' }
+    LR: { id:  126, 'Liberia' }
+    LY: { id:  127, 'Libyan Arab Jamahiriya' }
+    LI: { id:  128, 'Liechtenstein' }
+    LT: { id:  129, 'Lithuania' }
+    LU: { id:  130, 'Luxembourg' }
+    MO: { id:  131, 'Macao' }
+    MK: { id:  132, 'Macedonia, The former Yugoslav Republic of' }
+    MG: { id:  133, 'Madagascar' }
+    MW: { id:  134, 'Malawi' }
+    MY: { id:  135, 'Malaysia' }
+    MV: { id:  136, 'Maldives' }
+    ML: { id:  137, 'Mali' }
+    MT: { id:  138, 'Malta' }
+    MH: { id:  139, 'Marshall Islands' }
+    MQ: { id:  140, 'Martinique' }
+    MR: { id:  141, 'Mauritania' }
+    MU: { id:  142, 'Mauritius' }
+    YT: { id:  143, 'Mayotte' }
+    MX: { id:  144, 'Mexico' }
+    FM: { id:  145, 'Micronesia, Federated States of' }
+    MD: { id:  146, 'Moldova, Republic of' }
+    MC: { id:  147, 'Monaco' }
+    MN: { id:  148, 'Mongolia' }
+    ME: { id:  149, 'Montenegro' }
+    MS: { id:  150, 'Montserrat' }
+    MA: { id:  151, 'Morocco' }
+    MZ: { id:  152, 'Mozambique' }
+    MM: { id:  153, 'Myanmar' }
+    NA: { id:  154, 'Namibia' }
+    NR: { id:  155, 'Nauru' }
+    NP: { id:  156, 'Nepal' }
+    NL: { id:  157, 'Netherlands' }
+    NC: { id:  158, 'New Caledonia' }
+    NZ: { id:  159, 'New Zealand' }
+    NI: { id:  160, 'Nicaragua' }
+    NE: { id:  161, 'Niger' }
+    NG: { id:  162, 'Nigeria' }
+    NU: { id:  163, 'Niue' }
+    NF: { id:  164, 'Norfolk Island' }
+    MP: { id:  165, 'Northern Mariana Islands' }
+    NO: { id:  166, 'Norway' }
+    OM: { id:  167, 'Oman' }
+    PK: { id:  168, 'Pakistan' }
+    PW: { id:  169, 'Palau' }
+    PS: { id:  170, 'Palestinian Territory, Occupied' }
+    PA: { id:  171, 'Panama' }
+    PG: { id:  172, 'Papua New Guinea' }
+    PY: { id:  173, 'Paraguay' }
+    PE: { id:  174, 'Peru' }
+    PH: { id:  175, 'Philippines' }
+    PN: { id:  176, 'Pitcairn' }
+    PL: { id:  177, 'Poland' }
+    PT: { id:  178, 'Portugal' }
+    PR: { id:  179, 'Puerto Rico' }
+    QA: { id:  180, 'Qatar' }
+    RE: { id:  181, 'Reunion' }
+    RO: { id:  182, 'Romania' }
+    RU: { id:  183, 'Russian Federation' }
+    RW: { id:  184, 'Rwanda' }
+    BL: { id:  185, 'Saint Barthelemy' }
+    SH: { id:  186, 'Saint Helena, Ascension and Tristan Da Cunha' }
+    KN: { id:  187, 'Saint Kitts and Nevis' }
+    LC: { id:  188, 'Saint Lucia' }
+    MF: { id:  189, 'Saint Martin (French Part)' }
+    PM: { id:  190, 'Saint Pierre and Miquelon' }
+    VC: { id:  191, 'Saint Vincent and The Grenadines' }
+    WS: { id:  192, 'Samoa' }
+    SM: { id:  193, 'San Marino' }
+    ST: { id:  194, 'Sao Tome and Principe' }
+    SA: { id:  195, 'Saudi Arabia' }
+    SN: { id:  196, 'Senegal' }
+    RS: { id:  197, 'Serbia' }
+    SC: { id:  198, 'Seychelles' }
+    SL: { id:  199, 'Sierra Leone' }
+    SG: { id:  200, 'Singapore' }
+    SX: { id:  201, 'Sint Maarten (Dutch Part)' }
+    SK: { id:  202, 'Slovakia' }
+    SI: { id:  203, 'Slovenia' }
+    SB: { id:  204, 'Solomon Islands' }
+    SO: { id:  205, 'Somalia' }
+    ZA: { id:  206, 'South Africa' }
+    GS: { id:  207, 'South Georgia and The South Sandwich Islands' }
+    SS: { id:  208, 'South Sudan' }
+    ES: { id:  209, 'Spain' }
+    LK: { id:  210, 'Sri Lanka' }
+    SD: { id:  211, 'Sudan' }
+    SR: { id:  212, 'Suriname' }
+    SJ: { id:  213, 'Svalbard and Jan Mayen' }
+    SZ: { id:  214, 'Swaziland' }
+    SE: { id:  215, 'Sweden' }
+    CH: { id:  216, 'Switzerland' }
+    SY: { id:  217, 'Syrian Arab Republic' }
+    TW: { id:  218, 'Taiwan, Province of China' }
+    TJ: { id:  219, 'Tajikistan' }
+    TZ: { id:  220, 'Tanzania, United Republic of' }
+    TH: { id:  221, 'Thailand' }
+    TL: { id:  222, 'Timor-Leste' }
+    TG: { id:  223, 'Togo' }
+    TK: { id:  224, 'Tokelau' }
+    TO: { id:  225, 'Tonga' }
+    TT: { id:  226, 'Trinidad and Tobago' }
+    TN: { id:  227, 'Tunisia' }
+    TR: { id:  228, 'Turkey' }
+    TM: { id:  229, 'Turkmenistan' }
+    TC: { id:  230, 'Turks and Caicos Islands' }
+    TV: { id:  231, 'Tuvalu' }
+    UG: { id:  232, 'Uganda' }
+    UA: { id:  233, 'Ukraine' }
+    AE: { id:  234, 'United Arab Emirates' }
+    GB: { id:  235, 'United Kingdom' }
+    US: { id:  236, 'United States' }
+    UM: { id:  237, 'United States Minor Outlying Islands' }
+    UY: { id:  238, 'Uruguay' }
+    UZ: { id:  239, 'Uzbekistan' }
+    VU: { id:  240, 'Vanuatu' }
+    VE: { id:  241, 'Venezuela, Bolivarian Republic of' }
+    VN: { id:  242, 'Viet Nam' }
+    VG: { id:  243, 'Virgin Islands, British' }
+    VI: { id:  244, 'Virgin Islands, U.S.' }
+    WF: { id:  245, 'Wallis and Futuna' }
+    EH: { id:  246, 'Western Sahara' }
+    YE: { id:  247, 'Yemen' }
+    ZM: { id:  248, 'Zambia' }
+    ZW: { id:  249, Zimbabwe
+
+language:
+    AF-ZA: { id: 1, name: 'Afrikaans - South Africa' }
+    SQ-AL: { id: 2, name: 'Albanian - Albania' }
+    AR-DZ: { id: 3, name: 'Arabic - Algeria' }
+    AR-BH: { id: 4, name: 'Arabic - Bahrain' }
+    AR-EG: { id: 5, name: 'Arabic - Egypt' }
+    AR-IQ: { id: 6, name: 'Arabic - Iraq' }
+    AR-JO: { id: 7, name: 'Arabic - Jordan' }
+    AR-KW: { id: 8, name: 'Arabic - Kuwait' }
+    AR-LB: { id: 9, name: 'Arabic - Lebanon' }
+    AR-LY: { id: 10, name: 'Arabic - Libya' }
+    AR-MA: { id: 11, name: 'Arabic - Morocco' }
+    AR-OM: { id: 12, name: 'Arabic - Oman' }
+    AR-QA: { id: 13, name: 'Arabic - Qatar' }
+    AR-SA: { id: 14, name: 'Arabic - Saudi Arabia' }
+    AR-SY: { id: 15, name: 'Arabic - Syria' }
+    AR-TN: { id: 16, name: 'Arabic - Tunisia' }
+    AR-AE: { id: 17, name: 'Arabic - United Arab Emirates' }
+    AR-YE: { id: 18, name: 'Arabic - Yemen' }
+    HY-AM: { id: 19, name: 'Armenian - Armenia' }
+    CY-AZ-AZ: { id: 20, name: 'Azeri (Cyrillic) - Azerbaijan' }
+    LT-AZ-AZ: { id: 21, name: 'Azeri (Latin) - Azerbaijan' }
+    EU-ES: { id: 22, name: 'Basque - Basque' }
+    BE-BY: { id: 23, name: 'Belarusian - Belarus' }
+    BG-BG: { id: 24, name: 'Bulgarian - Bulgaria' }
+    CA-ES: { id: 25, name: 'Catalan - Catalan' }
+    ZH-CN: { id: 26, name: 'Chinese - China' }
+    ZH-HK: { id: 27, name: 'Chinese - Hong Kong SAR' }
+    ZH-MO: { id: 28, name: 'Chinese - Macau SAR' }
+    ZH-SG: { id: 29, name: 'Chinese - Singapore' }
+    ZH-TW: { id: 30, name: 'Chinese - Taiwan' }
+    ZH-CHS: { id: 31, name: 'Chinese (Simplified)' }
+    ZH-CHT: { id: 32, name: 'Chinese (Traditional)' }
+    HR-HR: { id: 33, name: 'Croatian - Croatia' }
+    CS-CZ: { id: 34, name: 'Czech - Czech Republic' }
+    DA-DK: { id: 35, name: 'Danish - Denmark' }
+    DIV-MV: { id: 36, name: 'Dhivehi - Maldives' }
+    NL-BE: { id: 37, name: 'Dutch - Belgium' }
+    NL-NL: { id: 38, name: 'Dutch - The Netherlands' }
+    EN-AU: { id: 39, name: 'English - Australia' }
+    EN-BZ: { id: 40, name: 'English - Belize' }
+    EN-CA: { id: 41, name: 'English - Canada' }
+    EN-CB: { id: 42, name: 'English - Caribbean' }
+    EN-IE: { id: 43, name: 'English - Ireland' }
+    EN-JM: { id: 44, name: 'English - Jamaica' }
+    EN-NZ: { id: 45, name: 'English - New Zealand' }
+    EN-PH: { id: 46, name: 'English - Philippines' }
+    EN-ZA: { id: 47, name: 'English - South Africa' }
+    EN-TT: { id: 48, name: 'English - Trinidad and Tobago' }
+    EN-GB: { id: 49, name: 'English - United Kingdom' }
+    EN-US: { id: 50, name: 'English - United States' }
+    EN-ZW: { id: 51, name: 'English - Zimbabwe' }
+    ET-EE: { id: 52, name: 'Estonian - Estonia' }
+    FO-FO: { id: 53, name: 'Faroese - Faroe Islands' }
+    FA-IR: { id: 54, name: 'Farsi - Iran' }
+    FI-FI: { id: 55, name: 'Finnish - Finland' }
+    FR-BE: { id: 56, name: 'French - Belgium' }
+    FR-CA: { id: 57, name: 'French - Canada' }
+    FR-FR: { id: 58, name: 'French - France' }
+    FR-LU: { id: 59, name: 'French - Luxembourg' }
+    FR-MC: { id: 60, name: 'French - Monaco' }
+    FR-CH: { id: 61, name: 'French - Switzerland' }
+    GL-ES: { id: 62, name: 'Galician - Galician' }
+    KA-GE: { id: 63, name: 'Georgian - Georgia' }
+    DE-AT: { id: 64, name: 'German - Austria' }
+    DE-DE: { id: 65, name: 'German - Germany' }
+    DE-LI: { id: 66, name: 'German - Liechtenstein' }
+    DE-LU: { id: 67, name: 'German - Luxembourg' }
+    DE-CH: { id: 68, name: 'German - Switzerland' }
+    EL-GR: { id: 69, name: 'Greek - Greece' }
+    GU-IN: { id: 70, name: 'Gujarati - India' }
+    HE-IL: { id: 71, name: 'Hebrew - Israel' }
+    HI-IN: { id: 72, name: 'Hindi - India' }
+    HU-HU: { id: 73, name: 'Hungarian - Hungary' }
+    IS-IS: { id: 74, name: 'Icelandic - Iceland' }
+    ID-ID: { id: 75, name: 'Indonesian - Indonesia' }
+    IT-IT: { id: 76, name: 'Italian - Italy' }
+    IT-CH: { id: 77, name: 'Italian - Switzerland' }
+    JA-JP: { id: 78, name: 'Japanese - Japan' }
+    KN-IN: { id: 79, name: 'Kannada - India' }
+    KK-KZ: { id: 80, name: 'Kazakh - Kazakhstan' }
+    KOK-IN: { id: 81, name: 'Konkani - India' }
+    KO-KR: { id: 82, name: 'Korean - Korea' }
+    KY-KZ: { id: 83, name: 'Kyrgyz - Kazakhstan' }
+    LV-LV: { id: 84, name: 'Latvian - Latvia' }
+    LT-LT: { id: 85, name: 'Lithuanian - Lithuania' }
+    MK-MK: { id: 86, name: 'Macedonian (FYROM)' }
+    MS-BN: { id: 87, name: 'Malay - Brunei' }
+    MS-MY: { id: 88, name: 'Malay - Malaysia' }
+    MR-IN: { id: 89, name: 'Marathi - India' }
+    MN-MN: { id: 90, name: 'Mongolian - Mongolia' }
+    NB-NO: { id: 91, name: 'Norwegian (Bokmål) - Norway' }
+    NN-NO: { id: 92, name: 'Norwegian (Nynorsk) - Norway' }
+    PL-PL: { id: 93, name: 'Polish - Poland' }
+    PT-BR: { id: 94, name: 'Portuguese - Brazil' }
+    PT-PT: { id: 95, name: 'Portuguese - Portugal' }
+    PA-IN: { id: 96, name: 'Punjabi - India' }
+    RO-RO: { id: 97, name: 'Romanian - Romania' }
+    RU-RU: { id: 98, name: 'Russian - Russia' }
+    SA-IN: { id: 99, name: 'Sanskrit - India' }
+    CY-SR-SP: { id: 100, name: 'Serbian (Cyrillic) - Serbia' }
+    LT-SR-SP: { id: 101, name: 'Serbian (Latin) - Serbia' }
+    SK-SK: { id: 102, name: 'Slovak - Slovakia' }
+    SL-SI: { id: 103, name: 'Slovenian - Slovenia' }
+    ES-AR: { id: 104, name: 'Spanish - Argentina' }
+    ES-BO: { id: 105, name: 'Spanish - Bolivia' }
+    ES-CL: { id: 106, name: 'Spanish - Chile' }
+    ES-CO: { id: 107, name: 'Spanish - Colombia' }
+    ES-CR: { id: 108, name: 'Spanish - Costa Rica' }
+    ES-DO: { id: 109, name: 'Spanish - Dominican Republic' }
+    ES-EC: { id: 110, name: 'Spanish - Ecuador' }
+    ES-SV: { id: 111, name: 'Spanish - El Salvador' }
+    ES-GT: { id: 112, name: 'Spanish - Guatemala' }
+    ES-HN: { id: 113, name: 'Spanish - Honduras' }
+    ES-MX: { id: 114, name: 'Spanish - Mexico' }
+    ES-NI: { id: 115, name: 'Spanish - Nicaragua' }
+    ES-PA: { id: 116, name: 'Spanish - Panama' }
+    ES-PY: { id: 117, name: 'Spanish - Paraguay' }
+    ES-PE: { id: 118, name: 'Spanish - Peru' }
+    ES-PR: { id: 119, name: 'Spanish - Puerto Rico' }
+    ES-ES: { id: 120, name: 'Spanish - Spain' }
+    ES-UY: { id: 121, name: 'Spanish - Uruguay' }
+    ES-VE: { id: 122, name: 'Spanish - Venezuela' }
+    SW-KE: { id: 123, name: 'Swahili - Kenya' }
+    SV-FI: { id: 124, name: 'Swedish - Finland' }
+    SV-SE: { id: 125, name: 'Swedish - Sweden' }
+    SYR-SY: { id: 126, name: 'Syriac - Syria' }
+    TA-IN: { id: 127, name: 'Tamil - India' }
+    TT-RU: { id: 128, name: 'Tatar - Russia' }
+    TE-IN: { id: 129, name: 'Telugu - India' }
+    TH-TH: { id: 130, name: 'Thai - Thailand' }
+    TR-TR: { id: 131, name: 'Turkish - Turkey' }
+    UK-UA: { id: 132, name: 'Ukrainian - Ukraine' }
+    UR-PK: { id: 133, name: 'Urdu - Pakistan' }
+    CY-UZ-UZ: { id: 134, name: 'Uzbek (Cyrillic) - Uzbekistan' }
+    LT-UZ-UZ: { id: 135, name: 'Uzbek (Latin) - Uzbekistan' }
+    VI-VN: { id: 136, name: 'Vietnamese - Vietnam' }
