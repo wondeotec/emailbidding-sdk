@@ -38,7 +38,7 @@ trait DataValidator
      */
     public function __construct()
     {
-        $data = Yaml::parse(file_get_contents(__DIR__ . '../Resources/data.yml'));
+        $data = Yaml::parse(file_get_contents(__DIR__ . '/../Resources/data.yml'));
 
         if (! isset($data['gender']) || ! isset($data['country']) || ! isset($data['language'])) {
             throw new \Exception('Issue detected on resources!');
