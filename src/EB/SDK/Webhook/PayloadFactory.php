@@ -28,10 +28,14 @@ class PayloadFactory
      */
     public static function createHardBounce(
         $recipientEmailAddress,
-        $recipientExternalId,
         $listExternalId,
+        $recipientExternalId = null,
         $ipAddress = '127.0.0.1'
     ) {
+        if ($recipientExternalId == null) {
+            $recipientExternalId = rand(1, 99999);
+        }
+
         return (new Payload())->setIpAddress($ipAddress)
             ->setAction(Type::HARD_BOUNCE)
             ->setCampaignId(rand(1, 99999))
@@ -56,10 +60,14 @@ class PayloadFactory
      */
     public static function createSoftBounce(
         $recipientEmailAddress,
-        $recipientExternalId,
         $listExternalId,
+        $recipientExternalId = null,
         $ipAddress = '127.0.0.1'
     ) {
+        if ($recipientExternalId == null) {
+            $recipientExternalId = rand(1, 99999);
+        }
+
         return (new Payload())->setIpAddress($ipAddress)
             ->setAction(Type::SOFT_BOUNCE)
             ->setCampaignId(rand(1, 99999))
@@ -84,10 +92,14 @@ class PayloadFactory
      */
     public static function createSpamComplaint(
         $recipientEmailAddress,
-        $recipientExternalId,
         $listExternalId,
+        $recipientExternalId = null,
         $ipAddress = '127.0.0.1'
     ) {
+        if ($recipientExternalId == null) {
+            $recipientExternalId = rand(1, 99999);
+        }
+
         return (new Payload())->setIpAddress($ipAddress)
             ->setAction(Type::SPAM_COMPLAINT)
             ->setCampaignId(rand(1, 99999))
@@ -112,10 +124,14 @@ class PayloadFactory
      */
     public static function createUnsubscription(
         $recipientEmailAddress,
-        $recipientExternalId,
         $listExternalId,
+        $recipientExternalId = null,
         $ipAddress = '127.0.0.1'
     ) {
+        if ($recipientExternalId == null) {
+            $recipientExternalId = rand(1, 99999);
+        }
+
         return (new Payload())->setIpAddress($ipAddress)
             ->setAction(Type::UNSUBSCRIPTION)
             ->setCampaignId(rand(1, 99999))
@@ -140,10 +156,14 @@ class PayloadFactory
      */
     public static function createClick(
         $recipientEmailAddress,
-        $recipientExternalId,
         $listExternalId,
+        $recipientExternalId = null,
         $ipAddress = '127.0.0.1'
     ) {
+        if ($recipientExternalId == null) {
+            $recipientExternalId = rand(1, 99999);
+        }
+
         return (new Payload())->setIpAddress($ipAddress)
             ->setAction(Type::CLICK)
             ->setCampaignId(rand(1, 99999))
@@ -168,10 +188,14 @@ class PayloadFactory
      */
     public static function createOpen(
         $recipientEmailAddress,
-        $recipientExternalId,
         $listExternalId,
+        $recipientExternalId = null,
         $ipAddress = '127.0.0.1'
     ) {
+        if ($recipientExternalId == null) {
+            $recipientExternalId = rand(1, 99999);
+        }
+
         return (new Payload())->setIpAddress($ipAddress)
             ->setAction(Type::OPEN)
             ->setCampaignId(rand(1, 99999))
