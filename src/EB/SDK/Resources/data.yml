@@ -4,254 +4,254 @@ gender:
     NA: { id: 3, name: 'Not Assign' }
 
 country:
-    AF: { id:  1, 'Afghanistan' }
-    AX: { id:  2, 'Aland Islands' }
-    AL: { id:  3, 'Albania' }
-    DZ: { id:  4, 'Algeria' }
-    AS: { id:  5, 'American Samoa' }
-    AD: { id:  6, 'Andorra' }
-    AO: { id:  7, 'Angola' }
-    AI: { id:  8, 'Anguilla' }
-    AQ: { id:  9, 'Antarctica' }
-    AG: { id:  10, 'Antigua and Barbuda' }
-    AR: { id:  11, 'Argentina' }
-    AM: { id:  12, 'Armenia' }
-    AW: { id:  13, 'Aruba' }
-    AU: { id:  14, 'Australia' }
-    AT: { id:  15, 'Austria' }
-    AZ: { id:  16, 'Azerbaijan' }
-    BS: { id:  17, 'Bahamas' }
-    BH: { id:  18, 'Bahrain' }
-    BD: { id:  19, 'Bangladesh' }
-    BB: { id:  20, 'Barbados' }
-    BY: { id:  21, 'Belarus' }
-    BE: { id:  22, 'Belgium' }
-    BZ: { id:  23, 'Belize' }
-    BJ: { id:  24, 'Benin' }
-    BM: { id:  25, 'Bermuda' }
-    BT: { id:  26, 'Bhutan' }
-    BO: { id:  27, 'Bolivia, Plurinational State of' }
-    BQ: { id:  28, 'Bonaire, Sint Eustatius and Saba' }
-    BA: { id:  29, 'Bosnia and Herzegovina' }
-    BW: { id:  30, 'Botswana' }
-    BV: { id:  31, 'Bouvet Island' }
-    BR: { id:  32, 'Brazil' }
-    IO: { id:  33, 'British Indian Ocean Territory' }
-    BN: { id:  34, 'Brunei Darussalam' }
-    BG: { id:  35, 'Bulgaria' }
-    BF: { id:  36, 'Burkina Faso' }
-    BI: { id:  37, 'Burundi' }
-    KH: { id:  38, 'Cambodia' }
-    CM: { id:  39, 'Cameroon' }
-    CA: { id:  40, 'Canada' }
-    CV: { id:  41, 'Cape Verde' }
-    KY: { id:  42, 'Cayman Islands' }
-    CF: { id:  43, 'Central African Republic' }
-    TD: { id:  44, 'Chad' }
-    CL: { id:  45, 'Chile' }
-    CN: { id:  46, 'China' }
-    CX: { id:  47, 'Christmas Island' }
-    CC: { id:  48, 'Cocos (Keeling) Islands' }
-    CO: { id:  49, 'Colombia' }
-    KM: { id:  50, 'Comoros' }
-    CG: { id:  51, 'Congo' }
-    CD: { id:  52, 'Congo, The Democratic Republic of the' }
-    CK: { id:  53, 'Cook Islands' }
-    CR: { id:  54, 'Costa Rica' }
-    CI: { id:  55, 'Cote d\'Ivoire' }
-    HR: { id:  56, 'Croatia' }
-    CU: { id:  57, 'Cuba' }
-    CW: { id:  58, 'Curacao' }
-    CY: { id:  59, 'Cyprus' }
-    CZ: { id:  60, 'Czech Republic' }
-    DK: { id:  61, 'Denmark' }
-    DJ: { id:  62, 'Djibouti' }
-    DM: { id:  63, 'Dominica' }
-    DO: { id:  64, 'Dominican Republic' }
-    EC: { id:  65, 'Ecuador' }
-    EG: { id:  66, 'Egypt' }
-    SV: { id:  67, 'El Salvador' }
-    GQ: { id:  68, 'Equatorial Guinea' }
-    ER: { id:  69, 'Eritrea' }
-    EE: { id:  70, 'Estonia' }
-    ET: { id:  71, 'Ethiopia' }
-    FK: { id:  72, 'Falkland Islands (Malvinas)' }
-    FO: { id:  73, 'Faroe Islands' }
-    FJ: { id:  74, 'Fiji' }
-    FI: { id:  75, 'Finland' }
-    FR: { id:  76, 'France' }
-    GF: { id:  77, 'French Guiana' }
-    PF: { id:  78, 'French Polynesia' }
-    TF: { id:  79, 'French Southern Territories' }
-    GA: { id:  80, 'Gabon' }
-    GM: { id:  81, 'Gambia' }
-    GE: { id:  82, 'Georgia' }
-    DE: { id:  83, 'Germany' }
-    GH: { id:  84, 'Ghana' }
-    GI: { id:  85, 'Gibraltar' }
-    GR: { id:  86, 'Greece' }
-    GL: { id:  87, 'Greenland' }
-    GD: { id:  88, 'Grenada' }
-    GP: { id:  89, 'Guadeloupe' }
-    GU: { id:  90, 'Guam' }
-    GT: { id:  91, 'Guatemala' }
-    GG: { id:  92, 'Guernsey' }
-    GN: { id:  93, 'Guinea' }
-    GW: { id:  94, 'Guinea-Bissau' }
-    GY: { id:  95, 'Guyana' }
-    HT: { id:  96, 'Haiti' }
-    HM: { id:  97, 'Heard Island and McDonald Islands' }
-    VA: { id:  98, 'Holy See (Vatican City State)' }
-    HN: { id:  99, 'Honduras' }
-    HK: { id:  100, 'Hong Kong' }
-    HU: { id:  101, 'Hungary' }
-    IS: { id:  102, 'Iceland' }
-    IN: { id:  103, 'India' }
-    ID: { id:  104, 'Indonesia' }
-    IR: { id:  105, 'Iran, Islamic Republic of' }
-    IQ: { id:  106, 'Iraq' }
-    IE: { id:  107, 'Ireland' }
-    IM: { id:  108, 'Isle of Man' }
-    IL: { id:  109, 'Israel' }
-    IT: { id:  110, 'Italy' }
-    JM: { id:  111, 'Jamaica' }
-    JP: { id:  112, 'Japan' }
-    JE: { id:  113, 'Jersey' }
-    JO: { id:  114, 'Jordan' }
-    KZ: { id:  115, 'Kazakhstan' }
-    KE: { id:  116, 'Kenya' }
-    KI: { id:  117, 'Kiribati' }
-    KP: { id:  118, 'Korea, Democratic People Republic of' }
-    KR: { id:  119, 'Korea, Republic of' }
-    KW: { id:  120, 'Kuwait' }
-    KG: { id:  121, 'Kyrgyzstan' }
-    LA: { id:  122, 'Lao People Democratic Republic' }
-    LV: { id:  123, 'Latvia' }
-    LB: { id:  124, 'Lebanon' }
-    LS: { id:  125, 'Lesotho' }
-    LR: { id:  126, 'Liberia' }
-    LY: { id:  127, 'Libyan Arab Jamahiriya' }
-    LI: { id:  128, 'Liechtenstein' }
-    LT: { id:  129, 'Lithuania' }
-    LU: { id:  130, 'Luxembourg' }
-    MO: { id:  131, 'Macao' }
-    MK: { id:  132, 'Macedonia, The former Yugoslav Republic of' }
-    MG: { id:  133, 'Madagascar' }
-    MW: { id:  134, 'Malawi' }
-    MY: { id:  135, 'Malaysia' }
-    MV: { id:  136, 'Maldives' }
-    ML: { id:  137, 'Mali' }
-    MT: { id:  138, 'Malta' }
-    MH: { id:  139, 'Marshall Islands' }
-    MQ: { id:  140, 'Martinique' }
-    MR: { id:  141, 'Mauritania' }
-    MU: { id:  142, 'Mauritius' }
-    YT: { id:  143, 'Mayotte' }
-    MX: { id:  144, 'Mexico' }
-    FM: { id:  145, 'Micronesia, Federated States of' }
-    MD: { id:  146, 'Moldova, Republic of' }
-    MC: { id:  147, 'Monaco' }
-    MN: { id:  148, 'Mongolia' }
-    ME: { id:  149, 'Montenegro' }
-    MS: { id:  150, 'Montserrat' }
-    MA: { id:  151, 'Morocco' }
-    MZ: { id:  152, 'Mozambique' }
-    MM: { id:  153, 'Myanmar' }
-    NA: { id:  154, 'Namibia' }
-    NR: { id:  155, 'Nauru' }
-    NP: { id:  156, 'Nepal' }
-    NL: { id:  157, 'Netherlands' }
-    NC: { id:  158, 'New Caledonia' }
-    NZ: { id:  159, 'New Zealand' }
-    NI: { id:  160, 'Nicaragua' }
-    NE: { id:  161, 'Niger' }
-    NG: { id:  162, 'Nigeria' }
-    NU: { id:  163, 'Niue' }
-    NF: { id:  164, 'Norfolk Island' }
-    MP: { id:  165, 'Northern Mariana Islands' }
-    NO: { id:  166, 'Norway' }
-    OM: { id:  167, 'Oman' }
-    PK: { id:  168, 'Pakistan' }
-    PW: { id:  169, 'Palau' }
-    PS: { id:  170, 'Palestinian Territory, Occupied' }
-    PA: { id:  171, 'Panama' }
-    PG: { id:  172, 'Papua New Guinea' }
-    PY: { id:  173, 'Paraguay' }
-    PE: { id:  174, 'Peru' }
-    PH: { id:  175, 'Philippines' }
-    PN: { id:  176, 'Pitcairn' }
-    PL: { id:  177, 'Poland' }
-    PT: { id:  178, 'Portugal' }
-    PR: { id:  179, 'Puerto Rico' }
-    QA: { id:  180, 'Qatar' }
-    RE: { id:  181, 'Reunion' }
-    RO: { id:  182, 'Romania' }
-    RU: { id:  183, 'Russian Federation' }
-    RW: { id:  184, 'Rwanda' }
-    BL: { id:  185, 'Saint Barthelemy' }
-    SH: { id:  186, 'Saint Helena, Ascension and Tristan Da Cunha' }
-    KN: { id:  187, 'Saint Kitts and Nevis' }
-    LC: { id:  188, 'Saint Lucia' }
-    MF: { id:  189, 'Saint Martin (French Part)' }
-    PM: { id:  190, 'Saint Pierre and Miquelon' }
-    VC: { id:  191, 'Saint Vincent and The Grenadines' }
-    WS: { id:  192, 'Samoa' }
-    SM: { id:  193, 'San Marino' }
-    ST: { id:  194, 'Sao Tome and Principe' }
-    SA: { id:  195, 'Saudi Arabia' }
-    SN: { id:  196, 'Senegal' }
-    RS: { id:  197, 'Serbia' }
-    SC: { id:  198, 'Seychelles' }
-    SL: { id:  199, 'Sierra Leone' }
-    SG: { id:  200, 'Singapore' }
-    SX: { id:  201, 'Sint Maarten (Dutch Part)' }
-    SK: { id:  202, 'Slovakia' }
-    SI: { id:  203, 'Slovenia' }
-    SB: { id:  204, 'Solomon Islands' }
-    SO: { id:  205, 'Somalia' }
-    ZA: { id:  206, 'South Africa' }
-    GS: { id:  207, 'South Georgia and The South Sandwich Islands' }
-    SS: { id:  208, 'South Sudan' }
-    ES: { id:  209, 'Spain' }
-    LK: { id:  210, 'Sri Lanka' }
-    SD: { id:  211, 'Sudan' }
-    SR: { id:  212, 'Suriname' }
-    SJ: { id:  213, 'Svalbard and Jan Mayen' }
-    SZ: { id:  214, 'Swaziland' }
-    SE: { id:  215, 'Sweden' }
-    CH: { id:  216, 'Switzerland' }
-    SY: { id:  217, 'Syrian Arab Republic' }
-    TW: { id:  218, 'Taiwan, Province of China' }
-    TJ: { id:  219, 'Tajikistan' }
-    TZ: { id:  220, 'Tanzania, United Republic of' }
-    TH: { id:  221, 'Thailand' }
-    TL: { id:  222, 'Timor-Leste' }
-    TG: { id:  223, 'Togo' }
-    TK: { id:  224, 'Tokelau' }
-    TO: { id:  225, 'Tonga' }
-    TT: { id:  226, 'Trinidad and Tobago' }
-    TN: { id:  227, 'Tunisia' }
-    TR: { id:  228, 'Turkey' }
-    TM: { id:  229, 'Turkmenistan' }
-    TC: { id:  230, 'Turks and Caicos Islands' }
-    TV: { id:  231, 'Tuvalu' }
-    UG: { id:  232, 'Uganda' }
-    UA: { id:  233, 'Ukraine' }
-    AE: { id:  234, 'United Arab Emirates' }
-    GB: { id:  235, 'United Kingdom' }
-    US: { id:  236, 'United States' }
-    UM: { id:  237, 'United States Minor Outlying Islands' }
-    UY: { id:  238, 'Uruguay' }
-    UZ: { id:  239, 'Uzbekistan' }
-    VU: { id:  240, 'Vanuatu' }
-    VE: { id:  241, 'Venezuela, Bolivarian Republic of' }
-    VN: { id:  242, 'Viet Nam' }
-    VG: { id:  243, 'Virgin Islands, British' }
-    VI: { id:  244, 'Virgin Islands, U.S.' }
-    WF: { id:  245, 'Wallis and Futuna' }
-    EH: { id:  246, 'Western Sahara' }
-    YE: { id:  247, 'Yemen' }
-    ZM: { id:  248, 'Zambia' }
+    AF: { id:  1, name: 'Afghanistan' }
+    AX: { id:  2, name: 'Aland Islands' }
+    AL: { id:  3, name: 'Albania' }
+    DZ: { id:  4, name: 'Algeria' }
+    AS: { id:  5, name: 'American Samoa' }
+    AD: { id:  6, name: 'Andorra' }
+    AO: { id:  7, name: 'Angola' }
+    AI: { id:  8, name: 'Anguilla' }
+    AQ: { id:  9, name: 'Antarctica' }
+    AG: { id:  10, name: 'Antigua and Barbuda' }
+    AR: { id:  11, name: 'Argentina' }
+    AM: { id:  12, name: 'Armenia' }
+    AW: { id:  13, name: 'Aruba' }
+    AU: { id:  14, name: 'Australia' }
+    AT: { id:  15, name: 'Austria' }
+    AZ: { id:  16, name: 'Azerbaijan' }
+    BS: { id:  17, name: 'Bahamas' }
+    BH: { id:  18, name: 'Bahrain' }
+    BD: { id:  19, name: 'Bangladesh' }
+    BB: { id:  20, name: 'Barbados' }
+    BY: { id:  21, name: 'Belarus' }
+    BE: { id:  22, name: 'Belgium' }
+    BZ: { id:  23, name: 'Belize' }
+    BJ: { id:  24, name: 'Benin' }
+    BM: { id:  25, name: 'Bermuda' }
+    BT: { id:  26, name: 'Bhutan' }
+    BO: { id:  27, name: 'Bolivia, Plurinational State of' }
+    BQ: { id:  28, name: 'Bonaire, Sint Eustatius and Saba' }
+    BA: { id:  29, name: 'Bosnia and Herzegovina' }
+    BW: { id:  30, name: 'Botswana' }
+    BV: { id:  31, name: 'Bouvet Island' }
+    BR: { id:  32, name: 'Brazil' }
+    IO: { id:  33, name: 'British Indian Ocean Territory' }
+    BN: { id:  34, name: 'Brunei Darussalam' }
+    BG: { id:  35, name: 'Bulgaria' }
+    BF: { id:  36, name: 'Burkina Faso' }
+    BI: { id:  37, name: 'Burundi' }
+    KH: { id:  38, name: 'Cambodia' }
+    CM: { id:  39, name: 'Cameroon' }
+    CA: { id:  40, name: 'Canada' }
+    CV: { id:  41, name: 'Cape Verde' }
+    KY: { id:  42, name: 'Cayman Islands' }
+    CF: { id:  43, name: 'Central African Republic' }
+    TD: { id:  44, name: 'Chad' }
+    CL: { id:  45, name: 'Chile' }
+    CN: { id:  46, name: 'China' }
+    CX: { id:  47, name: 'Christmas Island' }
+    CC: { id:  48, name: 'Cocos (Keeling) Islands' }
+    CO: { id:  49, name: 'Colombia' }
+    KM: { id:  50, name: 'Comoros' }
+    CG: { id:  51, name: 'Congo' }
+    CD: { id:  52, name: 'Congo, The Democratic Republic of the' }
+    CK: { id:  53, name: 'Cook Islands' }
+    CR: { id:  54, name: 'Costa Rica' }
+    CI: { id:  55, name: 'Cote d\'Ivoire' }
+    HR: { id:  56, name: 'Croatia' }
+    CU: { id:  57, name: 'Cuba' }
+    CW: { id:  58, name: 'Curacao' }
+    CY: { id:  59, name: 'Cyprus' }
+    CZ: { id:  60, name: 'Czech Republic' }
+    DK: { id:  61, name: 'Denmark' }
+    DJ: { id:  62, name: 'Djibouti' }
+    DM: { id:  63, name: 'Dominica' }
+    DO: { id:  64, name: 'Dominican Republic' }
+    EC: { id:  65, name: 'Ecuador' }
+    EG: { id:  66, name: 'Egypt' }
+    SV: { id:  67, name: 'El Salvador' }
+    GQ: { id:  68, name: 'Equatorial Guinea' }
+    ER: { id:  69, name: 'Eritrea' }
+    EE: { id:  70, name: 'Estonia' }
+    ET: { id:  71, name: 'Ethiopia' }
+    FK: { id:  72, name: 'Falkland Islands (Malvinas)' }
+    FO: { id:  73, name: 'Faroe Islands' }
+    FJ: { id:  74, name: 'Fiji' }
+    FI: { id:  75, name: 'Finland' }
+    FR: { id:  76, name: 'France' }
+    GF: { id:  77, name: 'French Guiana' }
+    PF: { id:  78, name: 'French Polynesia' }
+    TF: { id:  79, name: 'French Southern Territories' }
+    GA: { id:  80, name: 'Gabon' }
+    GM: { id:  81, name: 'Gambia' }
+    GE: { id:  82, name: 'Georgia' }
+    DE: { id:  83, name: 'Germany' }
+    GH: { id:  84, name: 'Ghana' }
+    GI: { id:  85, name: 'Gibraltar' }
+    GR: { id:  86, name: 'Greece' }
+    GL: { id:  87, name: 'Greenland' }
+    GD: { id:  88, name: 'Grenada' }
+    GP: { id:  89, name: 'Guadeloupe' }
+    GU: { id:  90, name: 'Guam' }
+    GT: { id:  91, name: 'Guatemala' }
+    GG: { id:  92, name: 'Guernsey' }
+    GN: { id:  93, name: 'Guinea' }
+    GW: { id:  94, name: 'Guinea-Bissau' }
+    GY: { id:  95, name: 'Guyana' }
+    HT: { id:  96, name: 'Haiti' }
+    HM: { id:  97, name: 'Heard Island and McDonald Islands' }
+    VA: { id:  98, name: 'Holy See (Vatican City State)' }
+    HN: { id:  99, name: 'Honduras' }
+    HK: { id:  100, name: 'Hong Kong' }
+    HU: { id:  101, name: 'Hungary' }
+    IS: { id:  102, name: 'Iceland' }
+    IN: { id:  103, name: 'India' }
+    ID: { id:  104, name: 'Indonesia' }
+    IR: { id:  105, name: 'Iran, Islamic Republic of' }
+    IQ: { id:  106, name: 'Iraq' }
+    IE: { id:  107, name: 'Ireland' }
+    IM: { id:  108, name: 'Isle of Man' }
+    IL: { id:  109, name: 'Israel' }
+    IT: { id:  110, name: 'Italy' }
+    JM: { id:  111, name: 'Jamaica' }
+    JP: { id:  112, name: 'Japan' }
+    JE: { id:  113, name: 'Jersey' }
+    JO: { id:  114, name: 'Jordan' }
+    KZ: { id:  115, name: 'Kazakhstan' }
+    KE: { id:  116, name: 'Kenya' }
+    KI: { id:  117, name: 'Kiribati' }
+    KP: { id:  118, name: 'Korea, Democratic People Republic of' }
+    KR: { id:  119, name: 'Korea, Republic of' }
+    KW: { id:  120, name: 'Kuwait' }
+    KG: { id:  121, name: 'Kyrgyzstan' }
+    LA: { id:  122, name: 'Lao People Democratic Republic' }
+    LV: { id:  123, name: 'Latvia' }
+    LB: { id:  124, name: 'Lebanon' }
+    LS: { id:  125, name: 'Lesotho' }
+    LR: { id:  126, name: 'Liberia' }
+    LY: { id:  127, name: 'Libyan Arab Jamahiriya' }
+    LI: { id:  128, name: 'Liechtenstein' }
+    LT: { id:  129, name: 'Lithuania' }
+    LU: { id:  130, name: 'Luxembourg' }
+    MO: { id:  131, name: 'Macao' }
+    MK: { id:  132, name: 'Macedonia, The former Yugoslav Republic of' }
+    MG: { id:  133, name: 'Madagascar' }
+    MW: { id:  134, name: 'Malawi' }
+    MY: { id:  135, name: 'Malaysia' }
+    MV: { id:  136, name: 'Maldives' }
+    ML: { id:  137, name: 'Mali' }
+    MT: { id:  138, name: 'Malta' }
+    MH: { id:  139, name: 'Marshall Islands' }
+    MQ: { id:  140, name: 'Martinique' }
+    MR: { id:  141, name: 'Mauritania' }
+    MU: { id:  142, name: 'Mauritius' }
+    YT: { id:  143, name: 'Mayotte' }
+    MX: { id:  144, name: 'Mexico' }
+    FM: { id:  145, name: 'Micronesia, Federated States of' }
+    MD: { id:  146, name: 'Moldova, Republic of' }
+    MC: { id:  147, name: 'Monaco' }
+    MN: { id:  148, name: 'Mongolia' }
+    ME: { id:  149, name: 'Montenegro' }
+    MS: { id:  150, name: 'Montserrat' }
+    MA: { id:  151, name: 'Morocco' }
+    MZ: { id:  152, name: 'Mozambique' }
+    MM: { id:  153, name: 'Myanmar' }
+    NA: { id:  154, name: 'Namibia' }
+    NR: { id:  155, name: 'Nauru' }
+    NP: { id:  156, name: 'Nepal' }
+    NL: { id:  157, name: 'Netherlands' }
+    NC: { id:  158, name: 'New Caledonia' }
+    NZ: { id:  159, name: 'New Zealand' }
+    NI: { id:  160, name: 'Nicaragua' }
+    NE: { id:  161, name: 'Niger' }
+    NG: { id:  162, name: 'Nigeria' }
+    NU: { id:  163, name: 'Niue' }
+    NF: { id:  164, name: 'Norfolk Island' }
+    MP: { id:  165, name: 'Northern Mariana Islands' }
+    NO: { id:  166, name: 'Norway' }
+    OM: { id:  167, name: 'Oman' }
+    PK: { id:  168, name: 'Pakistan' }
+    PW: { id:  169, name: 'Palau' }
+    PS: { id:  170, name: 'Palestinian Territory, Occupied' }
+    PA: { id:  171, name: 'Panama' }
+    PG: { id:  172, name: 'Papua New Guinea' }
+    PY: { id:  173, name: 'Paraguay' }
+    PE: { id:  174, name: 'Peru' }
+    PH: { id:  175, name: 'Philippines' }
+    PN: { id:  176, name: 'Pitcairn' }
+    PL: { id:  177, name: 'Poland' }
+    PT: { id:  178, name: 'Portugal' }
+    PR: { id:  179, name: 'Puerto Rico' }
+    QA: { id:  180, name: 'Qatar' }
+    RE: { id:  181, name: 'Reunion' }
+    RO: { id:  182, name: 'Romania' }
+    RU: { id:  183, name: 'Russian Federation' }
+    RW: { id:  184, name: 'Rwanda' }
+    BL: { id:  185, name: 'Saint Barthelemy' }
+    SH: { id:  186, name: 'Saint Helena, Ascension and Tristan Da Cunha' }
+    KN: { id:  187, name: 'Saint Kitts and Nevis' }
+    LC: { id:  188, name: 'Saint Lucia' }
+    MF: { id:  189, name: 'Saint Martin (French Part)' }
+    PM: { id:  190, name: 'Saint Pierre and Miquelon' }
+    VC: { id:  191, name: 'Saint Vincent and The Grenadines' }
+    WS: { id:  192, name: 'Samoa' }
+    SM: { id:  193, name: 'San Marino' }
+    ST: { id:  194, name: 'Sao Tome and Principe' }
+    SA: { id:  195, name: 'Saudi Arabia' }
+    SN: { id:  196, name: 'Senegal' }
+    RS: { id:  197, name: 'Serbia' }
+    SC: { id:  198, name: 'Seychelles' }
+    SL: { id:  199, name: 'Sierra Leone' }
+    SG: { id:  200, name: 'Singapore' }
+    SX: { id:  201, name: 'Sint Maarten (Dutch Part)' }
+    SK: { id:  202, name: 'Slovakia' }
+    SI: { id:  203, name: 'Slovenia' }
+    SB: { id:  204, name: 'Solomon Islands' }
+    SO: { id:  205, name: 'Somalia' }
+    ZA: { id:  206, name: 'South Africa' }
+    GS: { id:  207, name: 'South Georgia and The South Sandwich Islands' }
+    SS: { id:  208, name: 'South Sudan' }
+    ES: { id:  209, name: 'Spain' }
+    LK: { id:  210, name: 'Sri Lanka' }
+    SD: { id:  211, name: 'Sudan' }
+    SR: { id:  212, name: 'Suriname' }
+    SJ: { id:  213, name: 'Svalbard and Jan Mayen' }
+    SZ: { id:  214, name: 'Swaziland' }
+    SE: { id:  215, name: 'Sweden' }
+    CH: { id:  216, name: 'Switzerland' }
+    SY: { id:  217, name: 'Syrian Arab Republic' }
+    TW: { id:  218, name: 'Taiwan, Province of China' }
+    TJ: { id:  219, name: 'Tajikistan' }
+    TZ: { id:  220, name: 'Tanzania, United Republic of' }
+    TH: { id:  221, name: 'Thailand' }
+    TL: { id:  222, name: 'Timor-Leste' }
+    TG: { id:  223, name: 'Togo' }
+    TK: { id:  224, name: 'Tokelau' }
+    TO: { id:  225, name: 'Tonga' }
+    TT: { id:  226, name: 'Trinidad and Tobago' }
+    TN: { id:  227, name: 'Tunisia' }
+    TR: { id:  228, name: 'Turkey' }
+    TM: { id:  229, name: 'Turkmenistan' }
+    TC: { id:  230, name: 'Turks and Caicos Islands' }
+    TV: { id:  231, name: 'Tuvalu' }
+    UG: { id:  232, name: 'Uganda' }
+    UA: { id:  233, name: 'Ukraine' }
+    AE: { id:  234, name: 'United Arab Emirates' }
+    GB: { id:  235, name: 'United Kingdom' }
+    US: { id:  236, name: 'United States' }
+    UM: { id:  237, name: 'United States Minor Outlying Islands' }
+    UY: { id:  238, name: 'Uruguay' }
+    UZ: { id:  239, name: 'Uzbekistan' }
+    VU: { id:  240, name: 'Vanuatu' }
+    VE: { id:  241, name: 'Venezuela, Bolivarian Republic of' }
+    VN: { id:  242, name: 'Viet Nam' }
+    VG: { id:  243, name: 'Virgin Islands, British' }
+    VI: { id:  244, name: 'Virgin Islands, U.S.' }
+    WF: { id:  245, name: 'Wallis and Futuna' }
+    EH: { id:  246, name: 'Western Sahara' }
+    YE: { id:  247, name: 'Yemen' }
+    ZM: { id:  248, name: 'Zambia' }
     ZW: { id:  249, Zimbabwe
 
 language:
