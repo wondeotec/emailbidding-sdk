@@ -791,7 +791,7 @@ class Recipient implements \JsonSerializable
      *
      * @throws \Exception
      */
-    protected function isValidData()
+    protected function hasValidData()
     {
         // Country is mandatory
         if ($this->getCountry() == null) {
@@ -817,9 +817,16 @@ class Recipient implements \JsonSerializable
      * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
      * @return mixed data which can be serialized by <b>json_encode</b>,
      * which is a value of any type other than a resource.
+     * @throws \Exception
      */
     public function jsonSerialize()
     {
+        try {
+            $this->hasValidData();
+        } catch (\Exception $recipientException) {
+            throw new \Exception('Recipient data is not valid: ' . $recipientException->getMessage());
+        }
+
         $jsonRecipient = array();
 
         if ($this->getEmailAddress() != null) {
