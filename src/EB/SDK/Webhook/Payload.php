@@ -296,12 +296,12 @@ class Payload implements \JsonSerializable
         return [
             'ip_address' => $this->getIpAddress(),
             'action'  => $this->getAction(),
-            'campaign_id' => $this->getCampaignId(),
+            'campaign_id' => (int)$this->getCampaignId(),
             'list_external_id' => $this->getListExternalId(),
             'reason' => $this->getReason(),
             'recipient_email_address' => $this->getRecipientEmailAddress(),
             'hash' => $this->getHash(),
-            'recipient_external_id' => $this->getRecipientExternalId(),
+            'recipient_external_id' => (string)$this->getRecipientExternalId(),
             'trigger_date' => $this->getTriggerDate()->format('Y-m-d h:i:s'),
             'type' => $this->getType()
         ];
