@@ -361,7 +361,7 @@ class Recipient implements \JsonSerializable
         // Making all uppercase
         $gender = strtoupper($gender);
 
-        if ($this->isValidGender($gender)) {
+        if (! $this->isValidGender($gender)) {
             throw new \Exception(sprintf('The gender "%s" is not valid!', $gender));
         }
 
