@@ -791,7 +791,7 @@ class Recipient implements \JsonSerializable
      *
      * @throws \Exception
      */
-    protected function hasValidData()
+    public function hasValidData()
     {
         // Country is mandatory
         if ($this->getCountry() == null) {
