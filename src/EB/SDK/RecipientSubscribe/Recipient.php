@@ -329,6 +329,9 @@ class Recipient implements \JsonSerializable
      */
     public function setCountry($country)
     {
+        // Making all uppercase
+        $country = strtoupper($country);
+
         if (! $this->isValidCountry($country)) {
             throw new \Exception(sprintf('The country code "%s" isn\'t valid!', $country));
         }
@@ -355,6 +358,9 @@ class Recipient implements \JsonSerializable
      */
     public function setGender($gender)
     {
+        // Making all uppercase
+        $gender = strtoupper($gender);
+
         if ($this->isValidGender($gender)) {
             throw new \Exception(sprintf('The gender "%s" is not valid!', $gender));
         }
@@ -619,6 +625,9 @@ class Recipient implements \JsonSerializable
      */
     public function setSubscriptionStatus($subscriptionStatus)
     {
+        // Making all lowercase
+        $subscriptionStatus = strtolower($subscriptionStatus);
+
         if (! $this->isValidSubscriptionStatus($subscriptionStatus)) {
             throw new \Exception(sprintf('The subscription status "%s" isn\'t valid!', $subscriptionStatus));
         }
