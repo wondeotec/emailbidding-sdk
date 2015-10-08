@@ -242,7 +242,7 @@ country:
     UG: { id:  232, name: "Uganda" }
     UA: { id:  233, name: "Ukraine" }
     AE: { id:  234, name: "United Arab Emirates" }
-    GB: { id:  235, name: "United Kingdom" }
+    UK: { id:  235, name: "United Kingdom" }
     US: { id:  236, name: "United States" }
     UM: { id:  237, name: "United States Minor Outlying Islands" }
     UY: { id:  238, name: "Uruguay" }
