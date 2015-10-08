@@ -173,6 +173,9 @@ class Recipient implements \JsonSerializable
 
         $this->emailAddress = $emailAddress;
 
+        $this->setHash(RecipientFactory::getEmailAddressHash($emailAddress));
+        $this->setProvider(RecipientFactory::getDomainFromEmail($emailAddress));
+
         return $this;
     }
 
@@ -248,9 +251,16 @@ class Recipient implements \JsonSerializable
      * @param string $subscriptionSource
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setSubscriptionSource($subscriptionSource)
     {
+        if (strlen($subscriptionSource) > 150) {
+            throw new \Exception(
+                sprintf('Subscription source "%s" must have less than 150 characters!', $subscriptionSource)
+            );
+        }
         $this->subscriptionSource = $subscriptionSource;
 
         return $this;
@@ -295,7 +305,7 @@ class Recipient implements \JsonSerializable
      *
      * @return Recipient
      */
-    public function setSubscriptionDate($subscriptionDate)
+    public function setSubscriptionDate(\DateTime $subscriptionDate)
     {
         $this->subscriptionDate = $subscriptionDate;
 
@@ -366,9 +376,18 @@ class Recipient implements \JsonSerializable
      * @param string $firstName
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setFirstName($firstName)
     {
+        $firstNameLength = strlen($firstName);
+        if ($firstNameLength < 2 || $firstNameLength > 64) {
+            throw new \Exception(
+                sprintf('First name "%s" is invalid: it length must be between 2 and 64 characters!', $firstName)
+            );
+        }
+
         $this->firstName = $firstName;
 
         return $this;
@@ -386,9 +405,18 @@ class Recipient implements \JsonSerializable
      * @param string $lastName
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setLastName($lastName)
     {
+        $lastNameLength = strlen($lastName);
+        if ($lastNameLength < 2 || $lastNameLength > 64) {
+            throw new \Exception(
+                sprintf('Last name "%s" is invalid: it length must be between 2 and 64 characters!', $lastName)
+            );
+        }
+
         $this->lastName = $lastName;
 
         return $this;
@@ -407,7 +435,7 @@ class Recipient implements \JsonSerializable
      *
      * @return Recipient
      */
-    public function setBirthDate($birthDate)
+    public function setBirthDate(\DateTime $birthDate)
     {
         $this->birthDate = $birthDate;
 
@@ -426,9 +454,17 @@ class Recipient implements \JsonSerializable
      * @param string $address
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setAddress($address)
     {
+        if (strlen($address) > 150) {
+            throw new \Exception(
+                sprintf('Address "%s" is invalid: It must have less than 150 characters long!', $address)
+            );
+        }
+
         $this->address = $address;
 
         return $this;
@@ -446,9 +482,17 @@ class Recipient implements \JsonSerializable
      * @param string $zipCode
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setZipCode($zipCode)
     {
+        if (strlen($zipCode) > 10) {
+            throw new \Exception(
+                sprintf('Zip code "%s" is invalid: It must have less than 10 characters long!', $zipCode)
+            );
+        }
+
         $this->zipCode = $zipCode;
 
         return $this;
@@ -466,9 +510,17 @@ class Recipient implements \JsonSerializable
      * @param string $phone1
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setPhone1($phone1)
     {
+        if (strlen($phone1) > 20) {
+            throw new \Exception(
+                sprintf('Phone 1 "%s" is invalid: It must have less than 20 characters long!', $phone1)
+            );
+        }
+
         $this->phone1 = $phone1;
 
         return $this;
@@ -486,9 +538,17 @@ class Recipient implements \JsonSerializable
      * @param string $phone2
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setPhone2($phone2)
     {
+        if (strlen($phone2) > 20) {
+            throw new \Exception(
+                sprintf('Phone 2 "%s" is invalid: It must have less than 20 characters long!', $phone2)
+            );
+        }
+
         $this->phone2 = $phone2;
 
         return $this;
@@ -506,9 +566,17 @@ class Recipient implements \JsonSerializable
      * @param string $title
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setTitle($title)
     {
+        if (strlen($title) > 20) {
+            throw new \Exception(
+                sprintf('Title "%s" is invalid: It must have less than 20 characters long!', $title)
+            );
+        }
+
         $this->title = $title;
 
         return $this;
@@ -527,7 +595,7 @@ class Recipient implements \JsonSerializable
      *
      * @return Recipient
      */
-    public function setLastActivityDate($lastActivityDate)
+    public function setLastActivityDate(\DateTime $lastActivityDate)
     {
         $this->lastActivityDate = $lastActivityDate;
 
@@ -546,9 +614,15 @@ class Recipient implements \JsonSerializable
      * @param string $subscriptionStatus
      *
      * @return Recipient
+     *
+     * @throws \Exception
      */
     public function setSubscriptionStatus($subscriptionStatus)
     {
+        if (! $this->isValidSubscriptionStatus($subscriptionStatus)) {
+            throw new \Exception(sprintf('The subscription status "%s" isn\'t valid!', $subscriptionStatus));
+        }
+
         $this->subscriptionStatus = $subscriptionStatus;
 
         return $this;
@@ -573,7 +647,7 @@ class Recipient implements \JsonSerializable
     {
 
         if (! DataValidator::isIPAddressValid($unsubscriptionIp)) {
-            throw new \Exception(sprintf('The IP address "%" is not valid!', $unsubscriptionIp));
+            throw new \Exception(sprintf('The unsubscription IP address "%" is not valid!', $unsubscriptionIp));
         }
 
         $this->unsubscriptionIp = $unsubscriptionIp;
@@ -594,7 +668,7 @@ class Recipient implements \JsonSerializable
      *
      * @return Recipient
      */
-    public function setUnsubscriptionDate($unsubscriptionDate)
+    public function setUnsubscriptionDate(\DateTime $unsubscriptionDate)
     {
         $this->unsubscriptionDate = $unsubscriptionDate;
 
@@ -617,6 +691,7 @@ class Recipient implements \JsonSerializable
     public function setComplaint($complaint)
     {
         $this->complaint = $complaint;
+        $this->setComplaintDate(new \DateTime());
 
         return $this;
     }
@@ -634,9 +709,10 @@ class Recipient implements \JsonSerializable
      *
      * @return Recipient
      */
-    public function setComplaintDate($complaintDate)
+    public function setComplaintDate(\DateTime $complaintDate)
     {
         $this->complaintDate = $complaintDate;
+        $this->setComplaint(true);
 
         return $this;
     }
@@ -650,13 +726,15 @@ class Recipient implements \JsonSerializable
     }
 
     /**
-     * @param boolean $bounce
+     * @param boolean   $bounce
      *
      * @return Recipient
      */
     public function setBounce($bounce)
     {
         $this->bounce = $bounce;
+
+        $this->setBounceDate(new \DateTime());
 
         return $this;
     }
@@ -674,9 +752,10 @@ class Recipient implements \JsonSerializable
      *
      * @return Recipient
      */
-    public function setBounceDate($bounceDate)
+    public function setBounceDate(\DateTime $bounceDate)
     {
         $this->bounceDate = $bounceDate;
+        $this->setBounce(true);
 
         return $this;
     }
@@ -708,6 +787,31 @@ class Recipient implements \JsonSerializable
     }
 
     /**
+     * @return bool
+     *
+     * @throws \Exception
+     */
+    protected function isValidData()
+    {
+        // Country is mandatory
+        if ($this->getCountry() == null) {
+            throw new \Exception('Country is mandatory!');
+        }
+
+        // Email address or hash are mandatory
+        if ($this->getEmailAddress() == null && $this->getHash() == null) {
+            throw new \Exception('Email address or email address hash is mandatory!');
+        }
+
+        // If hash is defined, then the provider must be defined either
+        if ($this->getHash() != null && $this->getProvider() == null) {
+            throw new \Exception('On an anonymous integration, provider is mandatory!');
+        }
+
+        return true;
+    }
+
+    /**
      * (PHP 5 &gt;= 5.4.0)<br/>
      * Specify data which should be serialized to JSON
      * @link http://php.net/manual/en/jsonserializable.jsonserialize.php
@@ -716,10 +820,15 @@ class Recipient implements \JsonSerializable
      */
     public function jsonSerialize()
     {
-        $jsonRecipient = array(
-            'email_address' => $this->getEmailAddress(),
-            'country' => $this->getCountry()
-        );
+        $jsonRecipient = array();
+
+        if ($this->getEmailAddress() != null) {
+            $jsonRecipient['email_address'] = $this->getEmailAddress();
+        }
+
+        if ($this->getCountry() != null) {
+            $jsonRecipient['country'] = $this->getCountry();
+        }
 
         if ($this->getHash() != null) {
             $jsonRecipient['hash'] = $this->getHash();
@@ -742,7 +851,7 @@ class Recipient implements \JsonSerializable
         }
 
         if ($this->getSubscriptionDate() != null) {
-            $jsonRecipient['subscription_date'] = $this->getSubscriptionDate();
+            $jsonRecipient['subscription_date'] = $this->getSubscriptionDate()->format('Y-m-d h:i:s');
         }
 
         if ($this->getGender() != null) {
@@ -758,7 +867,7 @@ class Recipient implements \JsonSerializable
         }
 
         if ($this->getBirthDate() != null) {
-            $jsonRecipient['birthdate'] = $this->getBirthDate();
+            $jsonRecipient['birthdate'] = $this->getBirthDate()->format('Y-m-d');
         }
 
         if ($this->getAddress() != null) {
@@ -782,7 +891,7 @@ class Recipient implements \JsonSerializable
         }
 
         if ($this->getLastActivityDate() != null) {
-            $jsonRecipient['last_activity_date'] = $this->getLastActivityDate();
+            $jsonRecipient['last_activity_date'] = $this->getLastActivityDate()->format('Y-m-d h:i:s');
         }
 
         if ($this->getSubscriptionStatus() != null) {
@@ -794,15 +903,15 @@ class Recipient implements \JsonSerializable
         }
 
         if ($this->getUnsubscriptionDate() != null) {
-            $jsonRecipient['unsubscription_date'] = $this->getUnsubscriptionDate();
+            $jsonRecipient['unsubscription_date'] = $this->getUnsubscriptionDate()->format('Y-m-d h:i:s');
         }
 
         if ($this->getComplaintDate() != null) {
-            $jsonRecipient['complaint_date'] = $this->getComplaintDate();
+            $jsonRecipient['complaint_date'] = $this->getComplaintDate()->format('Y-m-d h:i:s');
         }
 
         if ($this->getBounceDate() != null) {
-            $jsonRecipient['bounce_date'] = $this->getBounceDate();
+            $jsonRecipient['bounce_date'] = $this->getBounceDate()->format('Y-m-d h:i:s');
         }
 
         if ($this->getLanguage() != null) {

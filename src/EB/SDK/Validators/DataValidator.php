@@ -34,19 +34,29 @@ trait DataValidator
     protected $availableLanguages;
 
     /**
+     * @var array
+     */
+    protected $availableSubscriptionStatus;
+
+    /**
      * DataValidator constructor.
      */
     public function __construct()
     {
         $data = Yaml::parse(file_get_contents(__DIR__ . '/../Resources/data.yml'));
 
-        if (! isset($data['gender']) || ! isset($data['country']) || ! isset($data['language'])) {
+        if (! isset($data['gender'])
+            || ! isset($data['country'])
+            || ! isset($data['language'])
+            || ! isset($data['subscription_status'])
+        ) {
             throw new \Exception('Issue detected on resources!');
         }
 
         $this->availableGenders = array_keys($data['gender']);
         $this->availableCountries = array_keys($data['country']);
         $this->availableLanguages = array_keys($data['language']);
+        $this->availableSubscriptionStatus = array_keys($data['subscription_status']);
     }
 
     /**
@@ -97,5 +107,15 @@ trait DataValidator
     public function isValidLanguage($languageCode)
     {
         return in_array($languageCode, $this->availableLanguages);
+    }
+
+    /**
+     * @param string $subscriptionStatus
+     *
+     * @return bool
+     */
+    public function isValidSubscriptionStatus($subscriptionStatus)
+    {
+        return in_array($subscriptionStatus, $this->availableSubscriptionStatus);
     }
 }

@@ -1,3 +1,7 @@
+subscription_status:
+    subscribed: { id: 1, name: "Subscribed" }
+    unsubscribed: { id: 2, name: "Unsubscribed" }
+
 gender:
     M: { id: 1, name: "Male" }
     F: { id: 2, name: "Female" }
