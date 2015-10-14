@@ -173,9 +173,6 @@ class Recipient implements \JsonSerializable
 
         $this->emailAddress = $emailAddress;
 
-        $this->setHash(RecipientFactory::getEmailAddressHash($emailAddress));
-        $this->setProvider(RecipientFactory::getDomainFromEmail($emailAddress));
-
         return $this;
     }
 
@@ -814,7 +811,7 @@ class Recipient implements \JsonSerializable
 
         // If hash is defined, then the provider must be defined either
         if ($this->getHash() != null && $this->getProvider() == null) {
-            throw new \Exception('On an anonymous integration, provider is mandatory!');
+            throw new \Exception('On an anonymous integration, email address hash and provider are mandatory!');
         }
 
         return true;
