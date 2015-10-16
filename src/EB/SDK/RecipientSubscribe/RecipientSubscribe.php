@@ -118,7 +118,7 @@ class RecipientSubscribe
             }
 
             // If we already send more all the contacts, we can break the loop
-            if ($offset + self::DEFAULT_MAX_RECIPIENTS_PER_REQUEST > $recipientsCount) {
+            if ($offset + self::DEFAULT_MAX_RECIPIENTS_PER_REQUEST >= $recipientsCount) {
                 break;
             }
 
