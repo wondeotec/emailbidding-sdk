@@ -167,10 +167,6 @@ class Recipient implements \JsonSerializable
      */
     public function setEmailAddress($emailAddress)
     {
-        if (! DataValidator::isEmailValid($emailAddress)) {
-            throw new \Exception(sprintf('The email address "%s" isn\'t valid!', $emailAddress));
-        }
-
         $this->emailAddress = $emailAddress;
 
         return $this;
@@ -253,11 +249,6 @@ class Recipient implements \JsonSerializable
      */
     public function setSubscriptionSource($subscriptionSource)
     {
-        if (strlen($subscriptionSource) > 150) {
-            throw new \Exception(
-                sprintf('Subscription source "%s" must have less than 150 characters!', $subscriptionSource)
-            );
-        }
         $this->subscriptionSource = $subscriptionSource;
 
         return $this;
@@ -280,10 +271,6 @@ class Recipient implements \JsonSerializable
      */
     public function setIpAddress($ipAddress)
     {
-        if (! DataValidator::isIPAddressValid($ipAddress)) {
-            throw new \Exception(sprintf('The IP address "%" is not valid!', $ipAddress));
-        }
-
         $this->ipAddress = $ipAddress;
 
         return $this;
@@ -329,10 +316,6 @@ class Recipient implements \JsonSerializable
         // Making all uppercase
         $country = strtoupper($country);
 
-        if (! $this->isValidCountry($country)) {
-            throw new \Exception(sprintf('The country code "%s" isn\'t valid!', $country));
-        }
-
         $this->country = $country;
 
         return $this;
@@ -358,10 +341,6 @@ class Recipient implements \JsonSerializable
         // Making all uppercase
         $gender = strtoupper($gender);
 
-        if (! $this->isValidGender($gender)) {
-            throw new \Exception(sprintf('The gender "%s" is not valid!', $gender));
-        }
-
         $this->gender = $gender;
 
         return $this;
@@ -384,13 +363,6 @@ class Recipient implements \JsonSerializable
      */
     public function setFirstName($firstName)
     {
-        $firstNameLength = strlen($firstName);
-        if ($firstNameLength < 2 || $firstNameLength > 64) {
-            throw new \Exception(
-                sprintf('First name "%s" is invalid: it length must be between 2 and 64 characters!', $firstName)
-            );
-        }
-
         $this->firstName = $firstName;
 
         return $this;
@@ -413,13 +385,6 @@ class Recipient implements \JsonSerializable
      */
     public function setLastName($lastName)
     {
-        $lastNameLength = strlen($lastName);
-        if ($lastNameLength < 2 || $lastNameLength > 64) {
-            throw new \Exception(
-                sprintf('Last name "%s" is invalid: it length must be between 2 and 64 characters!', $lastName)
-            );
-        }
-
         $this->lastName = $lastName;
 
         return $this;
@@ -462,12 +427,6 @@ class Recipient implements \JsonSerializable
      */
     public function setAddress($address)
     {
-        if (strlen($address) > 150) {
-            throw new \Exception(
-                sprintf('Address "%s" is invalid: It must have less than 150 characters long!', $address)
-            );
-        }
-
         $this->address = $address;
 
         return $this;
@@ -490,12 +449,6 @@ class Recipient implements \JsonSerializable
      */
     public function setZipCode($zipCode)
     {
-        if (strlen($zipCode) > 10) {
-            throw new \Exception(
-                sprintf('Zip code "%s" is invalid: It must have less than 10 characters long!', $zipCode)
-            );
-        }
-
         $this->zipCode = $zipCode;
 
         return $this;
@@ -518,12 +471,6 @@ class Recipient implements \JsonSerializable
      */
     public function setPhone1($phone1)
     {
-        if (strlen($phone1) > 20) {
-            throw new \Exception(
-                sprintf('Phone 1 "%s" is invalid: It must have less than 20 characters long!', $phone1)
-            );
-        }
-
         $this->phone1 = $phone1;
 
         return $this;
@@ -546,12 +493,6 @@ class Recipient implements \JsonSerializable
      */
     public function setPhone2($phone2)
     {
-        if (strlen($phone2) > 20) {
-            throw new \Exception(
-                sprintf('Phone 2 "%s" is invalid: It must have less than 20 characters long!', $phone2)
-            );
-        }
-
         $this->phone2 = $phone2;
 
         return $this;
@@ -574,12 +515,6 @@ class Recipient implements \JsonSerializable
      */
     public function setTitle($title)
     {
-        if (strlen($title) > 20) {
-            throw new \Exception(
-                sprintf('Title "%s" is invalid: It must have less than 20 characters long!', $title)
-            );
-        }
-
         $this->title = $title;
 
         return $this;
@@ -625,10 +560,6 @@ class Recipient implements \JsonSerializable
         // Making all lowercase
         $subscriptionStatus = strtolower($subscriptionStatus);
 
-        if (! $this->isValidSubscriptionStatus($subscriptionStatus)) {
-            throw new \Exception(sprintf('The subscription status "%s" isn\'t valid!', $subscriptionStatus));
-        }
-
         $this->subscriptionStatus = $subscriptionStatus;
 
         return $this;
@@ -651,11 +582,6 @@ class Recipient implements \JsonSerializable
      */
     public function setUnsubscriptionIp($unsubscriptionIp)
     {
-
-        if (! DataValidator::isIPAddressValid($unsubscriptionIp)) {
-            throw new \Exception(sprintf('The unsubscription IP address "%" is not valid!', $unsubscriptionIp));
-        }
-
         $this->unsubscriptionIp = $unsubscriptionIp;
 
         return $this;
@@ -697,7 +623,7 @@ class Recipient implements \JsonSerializable
     public function setComplaint($complaint)
     {
         $this->complaint = $complaint;
-        $this->setComplaintDate(new \DateTime());
+        $this->complaintDate = new \DateTime();
 
         return $this;
     }
@@ -718,7 +644,7 @@ class Recipient implements \JsonSerializable
     public function setComplaintDate(\DateTime $complaintDate)
     {
         $this->complaintDate = $complaintDate;
-        $this->setComplaint(true);
+        $this->complaint = true;
 
         return $this;
     }
@@ -739,8 +665,7 @@ class Recipient implements \JsonSerializable
     public function setBounce($bounce)
     {
         $this->bounce = $bounce;
-
-        $this->setBounceDate(new \DateTime());
+        $this->bounceDate = new \DateTime();
 
         return $this;
     }
@@ -761,7 +686,7 @@ class Recipient implements \JsonSerializable
     public function setBounceDate(\DateTime $bounceDate)
     {
         $this->bounceDate = $bounceDate;
-        $this->setBounce(true);
+        $this->bounce = true;
 
         return $this;
     }
@@ -783,17 +708,15 @@ class Recipient implements \JsonSerializable
      */
     public function setLanguage($language)
     {
-        if (! $this->isValidLanguage($language)) {
-            throw new \Exception(sprintf('The language code "%s" isn\'t valid!', $language));
-        }
-
         $this->language = $language;
 
         return $this;
     }
 
     /**
-     * @return bool
+     * Validates the recipient data
+     *
+     * @return bool Returns true if the recipient's data was valid, false otherwise
      *
      * @throws \Exception
      */
@@ -814,6 +737,88 @@ class Recipient implements \JsonSerializable
             throw new \Exception('On an anonymous integration, email address hash and provider are mandatory!');
         }
 
+        if ($this->emailAddress != null && ! DataValidator::isEmailValid($this->emailAddress)) {
+            throw new \Exception(sprintf('The email address "%s" isn\'t valid!', $this->emailAddress));
+        }
+
+        if ($this->subscriptionSource != null && strlen($this->subscriptionSource) > 150) {
+            throw new \Exception(
+                sprintf('Subscription source "%s" must have less than 150 characters!', $this->subscriptionSource)
+            );
+        }
+
+        if ($this->ipAddress != null && ! DataValidator::isIPAddressValid($this->ipAddress)) {
+            throw new \Exception(sprintf('The IP address "%" is not valid!', $this->ipAddress));
+        }
+
+        if (! $this->isValidCountry($this->country)) {
+            throw new \Exception(sprintf('The country code "%s" isn\'t valid!', $this->country));
+        }
+
+        if ($this->gender != null && ! $this->isValidGender($this->gender)) {
+            throw new \Exception(sprintf('The gender "%s" is not valid!', $this->gender));
+        }
+
+        $firstNameLength = strlen($this->firstName);
+        if ($this->firstName != null && ($firstNameLength < 2 || $firstNameLength > 64)) {
+            throw new \Exception(
+                sprintf('First name "%s" is invalid: it length must be between 2 and 64 characters!', $this->firstName)
+            );
+        }
+
+        $lastNameLength = strlen($this->lastName);
+        if ($this->lastName != null && ($lastNameLength < 2 || $lastNameLength > 64)) {
+            throw new \Exception(
+                sprintf('Last name "%s" is invalid: it length must be between 2 and 64 characters!', $this->lastName)
+            );
+        }
+
+        if ($this->address != null && strlen($this->address) > 150) {
+            throw new \Exception(
+                sprintf('Address "%s" is invalid: It must have less than 150 characters long!', $this->address)
+            );
+        }
+
+        if ($this->zipCode != null && strlen($this->zipCode) > 10) {
+            throw new \Exception(
+                sprintf('Zip code "%s" is invalid: It must have less than 10 characters long!', $this->zipCode)
+            );
+        }
+
+        if ($this->phone1 != null && strlen($this->phone1) > 20) {
+            throw new \Exception(
+                sprintf('Phone 1 "%s" is invalid: It must have less than 20 characters long!', $this->phone1)
+            );
+        }
+
+        if ($this->phone2 != null && strlen($this->phone2) > 20) {
+            throw new \Exception(
+                sprintf('Phone 2 "%s" is invalid: It must have less than 20 characters long!', $this->phone2)
+            );
+        }
+
+        if ($this->title != null && strlen($this->title) > 20) {
+            throw new \Exception(
+                sprintf('Title "%s" is invalid: It must have less than 20 characters long!', $this->title)
+            );
+        }
+
+        if ($this->subscriptionStatus != null && ! $this->isValidSubscriptionStatus($this->subscriptionStatus)) {
+            throw new \Exception(sprintf('The subscription status "%s" isn\'t valid!', $this->subscriptionStatus));
+        }
+
+        if ($this->unsubscriptionIp != null && ! DataValidator::isIPAddressValid($this->unsubscriptionIp)) {
+            throw new \Exception(sprintf('The unsubscription IP address "%" is not valid!', $this->unsubscriptionIp));
+        }
+
+        if ($this->language != null && ! $this->isValidLanguage($this->language)) {
+            throw new \Exception(sprintf('The language code "%s" isn\'t valid!', $this->language));
+        }
+
+        if (json_encode($this) === false) {
+            throw new \Exception(sprintf('The recipient\'s data can\'t be serialized: "%s"', json_last_error_msg()));
+        }
+
         return true;
     }
 
@@ -827,12 +832,6 @@ class Recipient implements \JsonSerializable
      */
     public function jsonSerialize()
     {
-        try {
-            $this->hasValidData();
-        } catch (\Exception $recipientException) {
-            throw new \Exception('Recipient data is not valid: ' . $recipientException->getMessage());
-        }
-
         $jsonRecipient = array();
 
         if ($this->getEmailAddress() != null) {
@@ -875,7 +874,7 @@ class Recipient implements \JsonSerializable
             $jsonRecipient['first_name'] = $this->getFirstName();
         }
 
-        if ($this->getLanguage() != null) {
+        if ($this->getLastName() != null) {
             $jsonRecipient['last_name'] = $this->getLastName();
         }
 

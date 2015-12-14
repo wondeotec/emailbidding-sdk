@@ -84,6 +84,19 @@ class RecipientSubscribe
             throw new \Exception('No recipient found!');
         }
 
+        // Recipient sanity check
+        foreach ($recipients as $recipient) {
+            try {
+                $recipient->hasValidData();
+            } catch (\Exception $recipientException) {
+                throw new \Exception(sprintf(
+                    'The recipient email/hash "%s", has invalid data: %s',
+                    $recipient->getEmailAddress() ?: $recipient->getHash(),
+                    $recipientException->getMessage()
+                ));
+            }
+        }
+
         $offset = 0;
         while (true) {
             $subscribe = new Subscribe();
