@@ -20,6 +20,9 @@ class Recipient implements \JsonSerializable
 {
     use DataValidator;
 
+    const STATUS_SUBSCRIBED = 'subscribed';
+    const STATUS_UNSUBSCRIBED = 'unsubscribed';
+
     /**
      * @var string A valid email address
      */
@@ -566,6 +569,38 @@ class Recipient implements \JsonSerializable
     }
 
     /**
+     * Set this recipient as subscribed.
+     * @param \DateTime $subscriptionDate The recipient subscripiton date
+     * @param string    $subscriptionIp The recipient subscription IP
+     *
+     * @return Recipient
+     */
+    public function setAsSubscribed(\DateTime $subscriptionDate, $subscriptionIp = '127.0.0.1')
+    {
+        $this->subscriptionStatus = self::STATUS_SUBSCRIBED;
+        $this->subscriptionDate = $subscriptionDate;
+        $this->ipAddress = $subscriptionIp;
+
+        return $this;
+    }
+
+    /**
+     * Set this recipient as unsubscribed
+     * @param \DateTime $unsubscriptionDate The recipient unsubscription date
+     * @param string    $unsubscriptionIp The recipient unsubscription Ip
+     *
+     * @return $this
+     */
+    public function setAsUnsubscribed(\DateTime $unsubscriptionDate, $unsubscriptionIp = '127.0.0.1')
+    {
+        $this->subscriptionStatus = self::STATUS_UNSUBSCRIBED;
+        $this->unsubscriptionDate = $unsubscriptionDate;
+        $this->unsubscriptionIp = $unsubscriptionIp;
+
+        return $this;
+    }
+
+    /**
      * @return string
      */
     public function getUnsubscriptionIp()
@@ -623,7 +658,6 @@ class Recipient implements \JsonSerializable
     public function setComplaint($complaint)
     {
         $this->complaint = $complaint;
-        $this->complaintDate = new \DateTime();
 
         return $this;
     }
@@ -650,6 +684,20 @@ class Recipient implements \JsonSerializable
     }
 
     /**
+     * Set recipient as complaint
+     * @param \DateTime $complaintDate The recipient complaint date
+     *
+     * @return Recipient
+     */
+    public function setAsComplaint(\DateTime $complaintDate)
+    {
+        $this->complaint = true;
+        $this->complaintDate = $complaintDate;
+
+        return $this;
+    }
+
+        /**
      * @return boolean
      */
     public function isBounce()
@@ -658,14 +706,13 @@ class Recipient implements \JsonSerializable
     }
 
     /**
-     * @param boolean   $bounce
+     * @param boolean $bounce
      *
      * @return Recipient
      */
     public function setBounce($bounce)
     {
         $this->bounce = $bounce;
-        $this->bounceDate = new \DateTime();
 
         return $this;
     }
@@ -687,6 +734,20 @@ class Recipient implements \JsonSerializable
     {
         $this->bounceDate = $bounceDate;
         $this->bounce = true;
+
+        return $this;
+    }
+
+    /**
+     * Set recipient as bounce.
+     * @param \DateTime $bounceDate The recipient bounce date
+     *
+     * @return Recipient
+     */
+    public function setAsBounce(\DateTime $bounceDate)
+    {
+        $this->bounce = true;
+        $this->bounceDate = $bounceDate;
 
         return $this;
     }
@@ -918,8 +979,16 @@ class Recipient implements \JsonSerializable
             $jsonRecipient['unsubscription_date'] = $this->getUnsubscriptionDate()->format('Y-m-d h:i:s');
         }
 
+        if ($this->isComplaint() != null) {
+            $jsonRecipient['complaint'] = $this->isComplaint();
+        }
+
         if ($this->getComplaintDate() != null) {
             $jsonRecipient['complaint_date'] = $this->getComplaintDate()->format('Y-m-d h:i:s');
+        }
+
+        if ($this->isBounce() != null) {
+            $jsonRecipient['bounce'] = $this->isBounce();
         }
 
         if ($this->getBounceDate() != null) {

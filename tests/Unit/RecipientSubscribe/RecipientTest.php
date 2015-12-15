@@ -76,4 +76,46 @@ class RecipientTest extends \PHPUnit_Framework_TestCase
             // OK, an exception is expected
         }
     }
+
+    /**
+     * @test
+     * @throws \Exception
+     */
+    public function testUnsubcribedRecipient()
+    {
+        $recipient = new Recipient();
+        $recipient->setEmailAddress('email@domain.com');
+        $recipient->setCountry('FR');
+        $recipient->setAsUnsubscribed(new \DateTime(), '12.34.56.78');
+
+        $this->assertTrue($recipient->hasValidData());
+    }
+
+    /**
+     * @test
+     * @throws \Exception
+     */
+    public function testComplainedRecipient()
+    {
+        $recipient = new Recipient();
+        $recipient->setEmailAddress('email@domain.com');
+        $recipient->setCountry('FR');
+        $recipient->setAsComplaint(new \DateTime());
+
+        $this->assertTrue($recipient->hasValidData());
+    }
+
+    /**
+     * @test
+     * @throws \Exception
+     */
+    public function testBounceRecipient()
+    {
+        $recipient = new Recipient();
+        $recipient->setEmailAddress('email@domain.com');
+        $recipient->setCountry('FR');
+        $recipient->setAsBounce(new \DateTime());
+
+        $this->assertTrue($recipient->hasValidData());
+    }
 }
