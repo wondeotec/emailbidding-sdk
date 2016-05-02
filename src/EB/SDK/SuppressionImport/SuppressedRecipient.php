@@ -113,5 +113,7 @@ class SuppressedRecipient implements \JsonSerializable
         if ($this->getHash() != null) {
             $jsonRecipient['hash'] = $this->getHash();
         }
+
+        return $jsonRecipient;
     }
 }
