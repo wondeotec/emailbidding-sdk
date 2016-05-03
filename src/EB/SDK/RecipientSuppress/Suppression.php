@@ -10,7 +10,7 @@
  * @copyright  Copyright (C) Wondeotec SA - All Rights Reserved
  * @license    LICENSE.txt
  */
-namespace EB\SDK\SuppressionImport;
+namespace EB\SDK\RecipientSuppress;
 
 /**
  * EB\SDK\SuppressionImport\Suppression
@@ -19,10 +19,9 @@ class Suppression implements \JsonSerializable
 {
 
     const EMAIL_SUPPRESSION_TYPE = 'email';
-    const MD5_SUPPRESSION_TYPE = 'md5';
 
     /**
-     * @var SuppressedRecipient [] $suppressedRecipients An list of recipients
+     * @var Recipient [] $suppressedRecipients An list of recipients
      */
     protected $suppressedRecipients;
 
@@ -48,9 +47,9 @@ class Suppression implements \JsonSerializable
     }
 
     /**
-     * @return SuppressedRecipient[]
+     * @return Recipient[]
      */
-    public function getSuppressedRecipient()
+    public function getRecipient()
     {
         return $this->suppressedRecipients;
     }
@@ -61,7 +60,7 @@ class Suppression implements \JsonSerializable
      *
      * @return Suppression
      */
-    public function setSuppressedRecipients(array $suppressedRecipients)
+    public function setRecipients(array $suppressedRecipients)
     {
         $this->suppressedRecipients = $suppressedRecipients;
 
@@ -74,7 +73,7 @@ class Suppression implements \JsonSerializable
      */
     public function hasValidData()
     {
-        if($this->suppressionType == self::EMAIL_SUPPRESSION_TYPE | $this->suppressionType == self::MD5_SUPPRESSION_TYPE )
+        if($this->suppressionType == self::EMAIL_SUPPRESSION_TYPE)
             return true;
         else
             throw new \Exception('Invalid suppression type');
@@ -91,7 +90,7 @@ class Suppression implements \JsonSerializable
      */
     public function jsonSerialize()
     {
-        if (count($this->getSuppressedRecipient()) == 0) {
+        if (count($this->getRecipient()) == 0) {
             throw new \Exception('No recipient added!');
         }
 
@@ -99,7 +98,7 @@ class Suppression implements \JsonSerializable
             throw new \Exception('No suppression type added!');
         }
 
-        return ['recipients' => $this->getSuppressedRecipient(),
+        return ['recipients' => $this->getRecipient(),
                 'suppression_type' =>$this->getSuppressionType()];
     }
 

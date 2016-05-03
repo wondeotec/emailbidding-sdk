@@ -1,7 +1,7 @@
 <?php
 
 /**
- * SuppressedRecipient.
+ * Recipient.
  *
  * Unauthorized copying or dissemination of this file, via any medium is strictly prohibited
  * Proprietary and confidential
@@ -10,19 +10,19 @@
  * @copyright  Copyright (C) Wondeotec SA - All Rights Reserved
  * @license    LICENSE.txt
  */
-namespace EB\SDK\SuppressionImport;
+namespace EB\SDK\RecipientSuppress;
 
 use EB\SDK\Validators\DataValidator;
 
 /**
- *  EB\SDK\SuppressionImport\SuppressedRecipient
+ *  EB\SDK\SuppressionImport\Recipient
  */
-class SuppressedRecipient implements \JsonSerializable
+class Recipient implements \JsonSerializable
 {
     use DataValidator;
 
     /**
-     * @var string A valid email address
+     * @var string A valid email address or md5 value
      */
     protected $value;
 
@@ -37,9 +37,8 @@ class SuppressedRecipient implements \JsonSerializable
     /**
      * @param string $value
      *
-     * @return SuppressedRecipient
+     * @return Recipient
      *
-     * @throws \Exception
      */
     public function setValue($value)
     {
@@ -76,7 +75,7 @@ class SuppressedRecipient implements \JsonSerializable
      */
     public function jsonSerialize()
     {
-        $jsonRecipient = array();
+        $jsonRecipient = [];
 
         if ($this->getValue() != null) {
             $jsonRecipient['value'] = $this->getValue();

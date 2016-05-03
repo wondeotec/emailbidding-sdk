@@ -10,17 +10,16 @@
  * @copyright  Copyright (C) Wondeotec SA - All Rights Reserved
  * @license    LICENSE.txt
  */
-namespace EB\SDK\SuppressionImport;
+namespace EB\SDK\RecipientSuppress;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
 /**
- * EB\SDK\SuppressionImport\SuppressedRecipientSuppression
+ * EB\SDK\SuppressionImport\RecipientSuppress
  */
-class SuppressedRecipientSuppression
+class RecipientSuppress
 {
-
     /**
      * @const The HTTP code for a success submit form to Emailbidding recipient subscribe API
      */
@@ -73,10 +72,10 @@ class SuppressedRecipientSuppression
 
 
     /**
-     * @param SuppressedRecipient [] $suppressedRecipients
-     * @param string                 $listExternalId
-     * @param string                 $publisherId
-     * @param string                 $suppressionType
+     * @param Recipient [] $suppressedRecipients
+     * @param string       $listExternalId
+     * @param string       $publisherId
+     * @param string       $suppressionType
      *
      * @returns bool
      * @throws \Exception
@@ -95,8 +94,8 @@ class SuppressedRecipientSuppression
             } catch (\Exception $recipientException) {
                 throw new \Exception(
                     sprintf(
-                        'The recipient email/hash "%s", has invalid data: %s',
-                        $suppressedRecipient->getValue() ?: $suppressedRecipient->getHash(),
+                        'The recipient value "%s", has invalid data: %s',
+                        $suppressedRecipient->getValue(),
                         $recipientException->getMessage()
                     )
                 );
@@ -106,7 +105,7 @@ class SuppressedRecipientSuppression
         $offset = 0;
         while (true) {
             $suppression = new Suppression();
-            $suppression->setSuppressedRecipients(
+            $suppression->setRecipients(
                 array_slice($suppressedRecipients, $offset, self::DEFAULT_MAX_RECIPIENTS_PER_REQUEST)
             );
             $suppression->setSuppressionType($suppressionType);

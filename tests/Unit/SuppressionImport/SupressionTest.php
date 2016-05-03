@@ -12,7 +12,7 @@
  */
 namespace EB\SDK\Tests\Unit\SuppressionImport;
 
-use EB\SDK\SuppressionImport\SuppressedRecipient;
+use EB\SDK\RecipientSuppress\Recipient;
 
 class SuppressionTest extends \PHPUnit_Framework_TestCase
 {
@@ -23,7 +23,7 @@ class SuppressionTest extends \PHPUnit_Framework_TestCase
      */
     public function testValidSuppressedRecipient()
     {
-        $suppressedRecipient = new SuppressedRecipient();
+        $suppressedRecipient = new Recipient();
         $suppressedRecipient->setValue('email@domain.com');
 
         $this->assertTrue($suppressedRecipient->hasValidData());
@@ -35,7 +35,7 @@ class SuppressionTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidSuppressedRecipient()
     {
-        $suppressedRecipient = new SuppressedRecipient();
+        $suppressedRecipient = new Recipient();
         $suppressedRecipient->setValue('email@domain.com');
 
         try {
@@ -44,34 +44,4 @@ class SuppressionTest extends \PHPUnit_Framework_TestCase
             // OK, an exception is expected
         }
     }
-
-    /**
-     * @test
-     * @throws \Exception
-     */
-    public function testValidAnonymousSuppressedRecipient()
-    {
-        $suppressedRecipient = new SuppressedRecipient();
-        $suppressedRecipient->setValue(md5('email@domain.com'));
-
-        $this->assertTrue($suppressedRecipient->hasValidData());
-    }
-
-    /**
-     * @test
-     * @throws \Exception
-     */
-    public function testInvalidAnonymousSuppressedRecipient()
-    {
-        $suppressedRecipient = new SuppressedRecipient();
-        $suppressedRecipient->setValue(md5('email@domain.com'));
-
-        try {
-            $suppressedRecipient->hasValidData();
-        } catch (\Exception $e) {
-            // OK, an exception is expected
-        }
-    }
-
-
 }
