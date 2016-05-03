@@ -11,6 +11,8 @@
  * @license    LICENSE.txt
  */
 namespace EB\SDK\Tests\Unit\SuppressionImport;
+use EB\SDK\SuppressionImport\Suppression;
+use EB\SDK\SuppressionImport\SuppressedRecipientSuppression;
 
 class SuppressedRecipientSuppressionTest extends \PHPUnit_Framework_TestCase
 {
@@ -18,7 +20,7 @@ class SuppressedRecipientSuppressionTest extends \PHPUnit_Framework_TestCase
      * @test
      * @throws \Exception
      */
-    public function testRecipientSubscribe()
+    public function testRecipientSubscribeForEmailSuppressionType()
     {
         $suppressedRecipientSuppression = $this->getMockBuilder(
             'EB\SDK\SuppressionImport\SuppressedRecipientSuppression'
@@ -30,8 +32,25 @@ class SuppressedRecipientSuppressionTest extends \PHPUnit_Framework_TestCase
             ->method('post')
             ->will($this->returnValue(true));
 
-        $this->assertTrue($suppressedRecipientSuppression->post(array(), 'publisher-id', 'list-external-id'));
+        $this->assertTrue($suppressedRecipientSuppression->post(array(), 'publisher-id', 'list-external-id','email'));
     }
 
+    /**
+     * @test
+     * @throws \Exception
+     */
+    public function testRecipientSubscribeForMd5SuppressionType()
+    {
+        $suppressedRecipientSuppression = $this->getMockBuilder(
+            'EB\SDK\SuppressionImport\SuppressedRecipientSuppression'
+        )
+            ->setConstructorArgs(array('key', 'secret'))
+            ->getMock();
 
+        $suppressedRecipientSuppression->expects($this->once())
+            ->method('post')
+            ->will($this->returnValue(true));
+
+        $this->assertTrue($suppressedRecipientSuppression->post(array(), 'publisher-id', 'list-external-id','md5'));
+    }
 }

@@ -96,7 +96,7 @@ class SuppressedRecipientSuppression
                 throw new \Exception(
                     sprintf(
                         'The recipient email/hash "%s", has invalid data: %s',
-                        $suppressedRecipient->getEmailAddress() ?: $suppressedRecipient->getHash(),
+                        $suppressedRecipient->getValue() ?: $suppressedRecipient->getHash(),
                         $recipientException->getMessage()
                     )
                 );

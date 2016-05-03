@@ -22,12 +22,12 @@ class Suppression implements \JsonSerializable
     const MD5_SUPPRESSION_TYPE = 'md5';
 
     /**
-     * @var $suppressedRecipients [] An list of recipients
+     * @var SuppressedRecipient [] $suppressedRecipients An list of recipients
      */
     protected $suppressedRecipients;
 
     /**
-     * @var $suppressionType []
+     * @var string $suppressionType
      */
     protected $suppressionType;
 

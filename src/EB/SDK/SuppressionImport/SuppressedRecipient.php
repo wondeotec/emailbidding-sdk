@@ -24,54 +24,30 @@ class SuppressedRecipient implements \JsonSerializable
     /**
      * @var string A valid email address
      */
-    protected $emailAddress;
-
-    /**
-     * @var string The email address hash
-     */
-    protected $hash;
+    protected $value;
 
     /**
      * @return string
      */
-    public function getEmailAddress()
+    public function getValue()
     {
-        return $this->emailAddress;
+        return $this->value;
     }
 
     /**
-     * @param string $emailAddress
+     * @param string $value
      *
      * @return SuppressedRecipient
      *
      * @throws \Exception
      */
-    public function setEmailAddress($emailAddress)
+    public function setValue($value)
     {
-        $this->emailAddress = $emailAddress;
+        $this->value = $value;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHash()
-    {
-        return $this->hash;
-    }
-
-    /**
-     * @param string $hash
-     *
-     * @return SuppressedRecipient
-     */
-    public function setHash($hash)
-    {
-        $this->hash = $hash;
-
-        return $this;
-    }
 
     /**
      * Validates the recipient data
@@ -83,12 +59,8 @@ class SuppressedRecipient implements \JsonSerializable
     public function hasValidData()
     {
         // Email address or hash are mandatory
-        if ($this->getEmailAddress() == null && $this->getHash() == null) {
-            throw new \Exception('Email address or email address hash is mandatory!');
-        }
-
-        if ($this->emailAddress != null && ! DataValidator::isEmailValid($this->emailAddress)) {
-            throw new \Exception(sprintf('The email address "%s" isn\'t valid!', $this->emailAddress));
+        if ($this->getValue() == null ) {
+            throw new \Exception('Value is mandatory!');
         }
 
         return true;
@@ -106,12 +78,8 @@ class SuppressedRecipient implements \JsonSerializable
     {
         $jsonRecipient = array();
 
-        if ($this->getEmailAddress() != null) {
-            $jsonRecipient['email_address'] = $this->getEmailAddress();
-        }
-
-        if ($this->getHash() != null) {
-            $jsonRecipient['hash'] = $this->getHash();
+        if ($this->getValue() != null) {
+            $jsonRecipient['value'] = $this->getValue();
         }
 
         return $jsonRecipient;

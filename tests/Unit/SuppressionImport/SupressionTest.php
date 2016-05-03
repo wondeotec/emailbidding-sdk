@@ -24,7 +24,7 @@ class SuppressionTest extends \PHPUnit_Framework_TestCase
     public function testValidSuppressedRecipient()
     {
         $suppressedRecipient = new SuppressedRecipient();
-        $suppressedRecipient->setEmailAddress('email@domain.com');
+        $suppressedRecipient->setValue('email@domain.com');
 
         $this->assertTrue($suppressedRecipient->hasValidData());
     }
@@ -36,7 +36,7 @@ class SuppressionTest extends \PHPUnit_Framework_TestCase
     public function testInvalidSuppressedRecipient()
     {
         $suppressedRecipient = new SuppressedRecipient();
-        $suppressedRecipient->setEmailAddress('email@domain.com');
+        $suppressedRecipient->setValue('email@domain.com');
 
         try {
             $suppressedRecipient->hasValidData();
@@ -52,7 +52,7 @@ class SuppressionTest extends \PHPUnit_Framework_TestCase
     public function testValidAnonymousSuppressedRecipient()
     {
         $suppressedRecipient = new SuppressedRecipient();
-        $suppressedRecipient->setHash(md5('email@domain.com'));
+        $suppressedRecipient->setValue(md5('email@domain.com'));
 
         $this->assertTrue($suppressedRecipient->hasValidData());
     }
@@ -64,7 +64,7 @@ class SuppressionTest extends \PHPUnit_Framework_TestCase
     public function testInvalidAnonymousSuppressedRecipient()
     {
         $suppressedRecipient = new SuppressedRecipient();
-        $suppressedRecipient->setHash(md5('email@domain.com'));
+        $suppressedRecipient->setValue(md5('email@domain.com'));
 
         try {
             $suppressedRecipient->hasValidData();

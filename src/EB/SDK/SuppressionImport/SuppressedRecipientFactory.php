@@ -20,26 +20,26 @@ class SuppressedRecipientFactory
     /**
      * Creates a recipient with the mandatory information.
      *
-     * @param string $emailAddress The recipient email address
+     * @param string $value The recipient email address
      *
      * @return SuppressedRecipient
      */
-    public static function createSimpleSuppressedRecipient($emailAddress)
+    public static function createSimpleSuppressedRecipient($value)
     {
-        return (new SuppressedRecipient())->setEmailAddress($emailAddress);
+        return (new SuppressedRecipient())->setValue($value);
     }
 
     /**
      * Creates an anonymous recipient with the mandatory information.
      *
-     * @param string $emailAddress The recipient email address to be converted into an hash
+     * @param string $value The recipient email address to be converted into an hash
      *
      *
      * @return SuppressedRecipient
      */
-    public static function createSimpleAnonymousSuppressedRecipient($emailAddress)
+    public static function createSimpleAnonymousSuppressedRecipient($value)
     {
-        return (new SuppressedRecipient())->setHash(self::getEmailAddressHash($emailAddress));
+        return (new SuppressedRecipient())->setValue(self::getEmailAddressHash($value));
     }
 
     /**
