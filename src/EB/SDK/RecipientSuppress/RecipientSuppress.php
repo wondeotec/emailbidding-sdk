@@ -23,7 +23,7 @@ class RecipientSuppress
     /**
      * @const The HTTP code for a success submit form to Emailbidding recipient subscribe API
      */
-    const SUCCESS_HTTP_CODE = 202;
+    const SUCCESS_HTTP_CODE = 200;
 
     /**
      * @const The default request timeout in seconds
@@ -120,7 +120,7 @@ class RecipientSuppress
             $response = null;
             try {
                 $response = $this->guzzleClient->post(
-                    $this->getApiEndpoint($publisherId, $listExternalId),
+                    $this->getApiEndpoint($publisherId),
                     $requestContent
                 );
             } catch (ClientException $guzzleException) {
@@ -138,6 +138,13 @@ class RecipientSuppress
             if ($response->getStatusCode() != self::SUCCESS_HTTP_CODE) {
                 throw new \Exception(
                     'Some errors found on this recipient submission: ' . $this->processErrors($response->getBody())
+                );
+            }
+
+            $response = json_decode($response->getBody(), true);
+            if (isset($response['status_code']) && $response['status_code'] != self::SUCCESS_HTTP_CODE) {
+                throw new \Exception(
+                    'Some errors found on this recipient submission: ' . $this->processErrors($response)
                 );
             }
 
