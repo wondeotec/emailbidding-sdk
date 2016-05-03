@@ -73,14 +73,13 @@ class RecipientSuppress
 
     /**
      * @param Recipient [] $suppressedRecipients
-     * @param string       $listExternalId
      * @param string       $publisherId
      * @param string       $suppressionType
      *
      * @returns bool
      * @throws \Exception
      */
-    public function post(array $suppressedRecipients, $publisherId, $listExternalId, $suppressionType)
+    public function post(array $suppressedRecipients, $publisherId, $suppressionType)
     {
         $suppressedRecipientsCount = count($suppressedRecipients);
         if ($suppressedRecipientsCount == 0) {
