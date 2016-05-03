@@ -155,13 +155,12 @@ class RecipientSuppress
 
     /**
      * @param int    $publisherId    The publisher Id
-     * @param string $listExternalId The publisher list external Id
      *
      * @return string
      */
-    protected function getApiEndpoint($publisherId, $listExternalId)
+    protected function getApiEndpoint($publisherId)
     {
-        return sprintf(self::EB_API_ENDPOINT, $publisherId, $listExternalId, $this->apiKey, $this->apiSecret);
+        return sprintf(self::EB_API_ENDPOINT, $publisherId, $this->apiKey, $this->apiSecret);
     }
 
     /**
