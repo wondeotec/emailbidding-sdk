@@ -74,7 +74,7 @@ class Suppression implements \JsonSerializable
      */
     public function hasValidData()
     {
-        if($this->suppressionType == self::EMAIL_SUPPRESSION_TYPE | self::MD5_SUPPRESSION_TYPE )
+        if($this->suppressionType == self::EMAIL_SUPPRESSION_TYPE | $this->suppressionType == self::MD5_SUPPRESSION_TYPE )
             return true;
         else
             throw new \Exception('Invalid suppression type');
@@ -99,7 +99,8 @@ class Suppression implements \JsonSerializable
             throw new \Exception('No suppression type added!');
         }
 
-        return ['recipients' => $this->getSuppressedRecipient()];
+        return ['recipients' => $this->getSuppressedRecipient(),
+                'suppression_type' =>$this->getSuppressionType()];
     }
 
 }
