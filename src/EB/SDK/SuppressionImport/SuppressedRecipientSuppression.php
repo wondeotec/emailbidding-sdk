@@ -76,11 +76,12 @@ class SuppressedRecipientSuppression
      * @param SuppressedRecipient [] $suppressedRecipients
      * @param string                 $listExternalId
      * @param string                 $publisherId
+     * @param string                 $suppressionType
      *
      * @returns bool
      * @throws \Exception
      */
-    public function post(array $suppressedRecipients, $publisherId, $listExternalId)
+    public function post(array $suppressedRecipients, $publisherId, $listExternalId, $suppressionType)
     {
         $suppressedRecipientsCount = count($suppressedRecipients);
         if ($suppressedRecipientsCount == 0) {
@@ -108,6 +109,8 @@ class SuppressedRecipientSuppression
             $suppression->setSuppressedRecipients(
                 array_slice($suppressedRecipients, $offset, self::DEFAULT_MAX_RECIPIENTS_PER_REQUEST)
             );
+            $suppression->setSuppressionType($suppressionType);
+            $suppression->hasValidData();
 
             $requestContent = [
                 'headers' => ['Content-Type' => 'application/json'],

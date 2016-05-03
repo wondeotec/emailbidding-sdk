@@ -18,10 +18,34 @@ namespace EB\SDK\SuppressionImport;
 class Suppression implements \JsonSerializable
 {
 
+    const EMAIL_SUPPRESSION_TYPE = 'email';
+    const MD5_SUPPRESSION_TYPE = 'md5';
+
     /**
      * @var $suppressedRecipients [] An list of recipients
      */
     protected $suppressedRecipients;
+
+    /**
+     * @var $suppressionType []
+     */
+    protected $suppressionType;
+
+    /**
+     * @return mixed
+     */
+    public function getSuppressionType()
+    {
+        return $this->suppressionType;
+    }
+
+    /**
+     * @param mixed $suppressionType
+     */
+    public function setSuppressionType($suppressionType)
+    {
+        $this->suppressionType = $suppressionType;
+    }
 
     /**
      * @return SuppressedRecipient[]
@@ -45,6 +69,18 @@ class Suppression implements \JsonSerializable
     }
 
     /**
+     * @return bool
+     * @throws \Exception
+     */
+    public function hasValidData()
+    {
+        if($this->suppressionType == self::EMAIL_SUPPRESSION_TYPE | self::MD5_SUPPRESSION_TYPE )
+            return true;
+        else
+            throw new \Exception('Invalid suppression type');
+    }
+
+    /**
      * (PHP 5 &gt;= 5.4.0)<br/>
      * Specify data which should be serialized to JSON
      *
@@ -57,6 +93,10 @@ class Suppression implements \JsonSerializable
     {
         if (count($this->getSuppressedRecipient()) == 0) {
             throw new \Exception('No recipient added!');
+        }
+
+        if (count($this->getSuppressionType()) == 0) {
+            throw new \Exception('No suppression type added!');
         }
 
         return ['recipients' => $this->getSuppressedRecipient()];
