@@ -45,7 +45,7 @@ class RecipientFactory
         $unsubscriptionIp = '127.0.0.1'
     ) {
         return self::createSimpleRecipient($emailAddress, $countryCode)
-            ->setSubscriptionStatus('unsubscribed')
+            ->setSubscriptionStatus(Recipient::STATUS_UNSUBSCRIBED)
             ->setUnsubscriptionDate($unsubscriptionDate)
             ->setUnsubscriptionIp($unsubscriptionIp);
     }
@@ -80,7 +80,7 @@ class RecipientFactory
         $unsubscriptionIp = '127.0.0.1'
     ) {
         return self::createSimpleAnonymousRecipient($emailAddress, $countryCode)
-            ->setSubscriptionStatus('unsubscribed')
+            ->setSubscriptionStatus(Recipient::STATUS_UNSUBSCRIBED)
             ->setUnsubscriptionDate($unsubscriptionDate)
             ->setUnsubscriptionIp($unsubscriptionIp);
     }
