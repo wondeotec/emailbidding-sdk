@@ -57,7 +57,7 @@ class DataValidationException extends \Exception
     public static function throwInvalidCountryException()
     {
 
-        throw new static(self::INVALID_EMAIL_ADDRESS, 'Country is mandatory!');
+        throw new static(self::INVALID_COUNTRY, 'Country is mandatory!');
     }
 
     /**

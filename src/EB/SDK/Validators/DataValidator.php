@@ -70,12 +70,20 @@ trait DataValidator
         return ! empty($emailAddress) && filter_var($emailAddress, FILTER_VALIDATE_EMAIL) ? true : false;
     }
 
+    /**
+     * @param string $hash MD5 hash
+     * @return bool
+     */
     public function isHashValid($hash)
     {
 
         return ! empty($hash) && strlen($hash) == 32;
     }
 
+    /**
+     * @param string $subscriptionSource
+     * @return bool
+     */
     public function isSubscriptionSourceValid($subscriptionSource)
     {
 
