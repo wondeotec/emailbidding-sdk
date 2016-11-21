@@ -1,9 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: jtorres
- * Date: 11/21/16
- * Time: 1:01 PM
+ * Unauthorized copying or dissemination of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ *
+ * @author    Jorge Torres <jorge.torres@wondeotec.com>
+ * @copyright Copyright (C) Wondeotec SA - All Rights Reserved
+ * @license   LICENSE.txt
  */
 
 namespace EB\SDK\Exception;
