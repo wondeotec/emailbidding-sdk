@@ -11,6 +11,7 @@
 
 namespace EB\SDK\RecipientSubscribe;
 
+use EB\SDK\Exception\DataValidationException;
 use EB\SDK\Validators\DataValidator;
 
 /**
@@ -578,8 +579,8 @@ class Recipient implements \JsonSerializable
     public function setAsSubscribed(\DateTime $subscriptionDate, $subscriptionIp = '127.0.0.1')
     {
         $this->subscriptionStatus = self::STATUS_SUBSCRIBED;
-        $this->subscriptionDate = $subscriptionDate;
-        $this->ipAddress = $subscriptionIp;
+        $this->subscriptionDate   = $subscriptionDate;
+        $this->ipAddress          = $subscriptionIp;
 
         return $this;
     }
@@ -595,7 +596,7 @@ class Recipient implements \JsonSerializable
     {
         $this->subscriptionStatus = self::STATUS_UNSUBSCRIBED;
         $this->unsubscriptionDate = $unsubscriptionDate;
-        $this->unsubscriptionIp = $unsubscriptionIp;
+        $this->unsubscriptionIp   = $unsubscriptionIp;
 
         return $this;
     }
@@ -678,7 +679,7 @@ class Recipient implements \JsonSerializable
     public function setComplaintDate(\DateTime $complaintDate)
     {
         $this->complaintDate = $complaintDate;
-        $this->complaint = true;
+        $this->complaint     = true;
 
         return $this;
     }
@@ -691,7 +692,7 @@ class Recipient implements \JsonSerializable
      */
     public function setAsComplaint(\DateTime $complaintDate)
     {
-        $this->complaint = true;
+        $this->complaint     = true;
         $this->complaintDate = $complaintDate;
 
         return $this;
@@ -733,7 +734,7 @@ class Recipient implements \JsonSerializable
     public function setBounceDate(\DateTime $bounceDate)
     {
         $this->bounceDate = $bounceDate;
-        $this->bounce = true;
+        $this->bounce     = true;
 
         return $this;
     }
@@ -746,7 +747,7 @@ class Recipient implements \JsonSerializable
      */
     public function setAsBounce(\DateTime $bounceDate)
     {
-        $this->bounce = true;
+        $this->bounce     = true;
         $this->bounceDate = $bounceDate;
 
         return $this;
@@ -784,96 +785,85 @@ class Recipient implements \JsonSerializable
     public function hasValidData()
     {
         // Country is mandatory
-        if ($this->getCountry() == null) {
-            throw new \Exception('Country is mandatory!');
+        if (! $this->isCountryValid($this->country)) {
+            DataValidationException::throwInvalidCountryException();
         }
 
         // Email address or hash are mandatory
-        if ($this->getEmailAddress() == null && $this->getHash() == null) {
-            throw new \Exception('Email address or email address hash is mandatory!');
+        if (empty($this->emailAddress) && empty($this->hash)) {
+            DataValidationException::throwEmailAddressOrHashMandatoryException();
         }
 
         // If hash is defined, then the provider must be defined either
-        if ($this->getHash() != null && $this->getProvider() == null) {
-            throw new \Exception('On an anonymous integration, email address hash and provider are mandatory!');
+        if (! empty($this->hash) && empty($this->provider)) {
+            DataValidationException::throwProviderMandatoryException();
         }
 
-        if ($this->emailAddress != null && ! DataValidator::isEmailValid($this->emailAddress)) {
-            throw new \Exception(sprintf('The email address "%s" isn\'t valid!', $this->emailAddress));
+        // If email exists then it must be valid
+        if (! empty($this->emailAddress) && ! $this->isEmailValid($this->emailAddress)) {
+            DataValidationException::throwInvalidEmailAddressException($this->emailAddress);
         }
 
-        if ($this->subscriptionSource != null && strlen($this->subscriptionSource) > 150) {
-            throw new \Exception(
-                sprintf('Subscription source "%s" must have less than 150 characters!', $this->subscriptionSource)
-            );
+        // If subscription source exists then it must be valid
+        if (! empty($this->subscriptionSource) && ! $this->isSubscriptionSourceValid($this->subscriptionSource)) {
+            DataValidationException::throwInvalidSubscriptionSourceException();
         }
 
-        if ($this->ipAddress != null && ! DataValidator::isIPAddressValid($this->ipAddress)) {
-            throw new \Exception(sprintf('The IP address "%" is not valid!', $this->ipAddress));
+        // If IP address exists then it must be valid
+        if (! empty($this->ipAddress) && ! $this->isIpAddressValid($this->ipAddress)) {
+            DataValidationException::throwInvalidIpAddressException($this->ipAddress);
         }
 
-        if (! $this->isValidCountry($this->country)) {
-            throw new \Exception(sprintf('The country code "%s" isn\'t valid!', $this->country));
+        // If the gender exists then it must be valid
+        if (! empty($this->gender) && ! $this->isGenderValid($this->gender)) {
+            DataValidationException::throwInvalidGenderException($this->gender);
         }
 
-        if ($this->gender != null && ! $this->isValidGender($this->gender)) {
-            throw new \Exception(sprintf('The gender "%s" is not valid!', $this->gender));
+        // If the first name exists then it must be valid
+        if (! empty($this->firstName) && ! $this->isFirstNameValid($this->firstName)) {
+            DataValidationException::throwInvalidFirstNameException($this->firstName);
         }
 
-        $firstNameLength = strlen($this->firstName);
-        if ($this->firstName != null && ($firstNameLength < 2 || $firstNameLength > 64)) {
-            throw new \Exception(
-                sprintf('First name "%s" is invalid: it length must be between 2 and 64 characters!', $this->firstName)
-            );
+        // If the last name exists then it must be valid
+        if (! empty($this->lastName) && ! $this->isLastNameValid($this->lastName)) {
+            DataValidationException::throwInvalidLastNameException($this->lastName);
         }
 
-        $lastNameLength = strlen($this->lastName);
-        if ($this->lastName != null && ($lastNameLength < 2 || $lastNameLength > 64)) {
-            throw new \Exception(
-                sprintf('Last name "%s" is invalid: it length must be between 2 and 64 characters!', $this->lastName)
-            );
+        // If the address exists then it must be valid
+        if (! empty($this->address) && ! $this->isAddressValid($this->address)) {
+            DataValidationException::throwInvalidAddressException($this->address);
         }
 
-        if ($this->address != null && strlen($this->address) > 150) {
-            throw new \Exception(
-                sprintf('Address "%s" is invalid: It must have less than 150 characters long!', $this->address)
-            );
+        // If the zip code exists then it must be valid
+        if (! empty($this->zipCode) && $this->isZipCodeValid($this->zipCode)) {
+            DataValidationException::throwInvalidZipCodeException($this->zipCode);
         }
 
-        if ($this->zipCode != null && strlen($this->zipCode) > 10) {
-            throw new \Exception(
-                sprintf('Zip code "%s" is invalid: It must have less than 10 characters long!', $this->zipCode)
-            );
+        // If the phone1 exists then it must be valid
+        if (! empty($this->phone1) && ! $this->isPhoneValid($this->phone1)) {
+            DataValidationException::throwInvalidPhone1Exception($this->phone1);
         }
 
-        if ($this->phone1 != null && strlen($this->phone1) > 20) {
-            throw new \Exception(
-                sprintf('Phone 1 "%s" is invalid: It must have less than 20 characters long!', $this->phone1)
-            );
+        // If the phone2 exists then it must be valid
+        if (! empty($this->phone2) && ! $this->isPhoneValid($this->phone2)) {
+            DataValidationException::throwInvalidPhone2Exception($this->phone2);
         }
 
-        if ($this->phone2 != null && strlen($this->phone2) > 20) {
-            throw new \Exception(
-                sprintf('Phone 2 "%s" is invalid: It must have less than 20 characters long!', $this->phone2)
-            );
+        // If the title exists then it must be valid
+        if (! empty($this->title) && ! $this->isTitleValid($this->title)) {
+            DataValidationException::throwInvalidTitleException($this->title);
         }
 
-        if ($this->title != null && strlen($this->title) > 20) {
-            throw new \Exception(
-                sprintf('Title "%s" is invalid: It must have less than 20 characters long!', $this->title)
-            );
+        if (! empty($this->subscriptionStatus) && ! $this->isSubscriptionStatusValid($this->subscriptionStatus)) {
+            DataValidationException::throwInvalidSubscriptionStatusException($this->subscriptionStatus);
         }
 
-        if ($this->subscriptionStatus != null && ! $this->isValidSubscriptionStatus($this->subscriptionStatus)) {
-            throw new \Exception(sprintf('The subscription status "%s" isn\'t valid!', $this->subscriptionStatus));
+        if (! empty($this->unsubscriptionIp) && ! $this->isIpAddressValid($this->unsubscriptionIp)) {
+            DataValidationException::throwInvalidUnsubscriptionIpException($this->unsubscriptionIp);
         }
 
-        if ($this->unsubscriptionIp != null && ! DataValidator::isIPAddressValid($this->unsubscriptionIp)) {
-            throw new \Exception(sprintf('The unsubscription IP address "%" is not valid!', $this->unsubscriptionIp));
-        }
-
-        if ($this->language != null && ! $this->isValidLanguage($this->language)) {
-            throw new \Exception(sprintf('The language code "%s" isn\'t valid!', $this->language));
+        if (! empty($this->language) && ! $this->isLanguageValid($this->language)) {
+            DataValidationException::throwInvalidLanguageException($this->language);
         }
 
         if (json_encode($this) === false) {

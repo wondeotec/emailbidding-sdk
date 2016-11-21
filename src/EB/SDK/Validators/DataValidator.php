@@ -60,22 +60,44 @@ trait DataValidator
     }
 
     /**
-     * @param $emailAddress
+     * @param string $emailAddress
      *
      * @return bool
      */
-    public static function isEmailValid($emailAddress)
+    public function isEmailValid($emailAddress)
     {
-        return filter_var($emailAddress, FILTER_VALIDATE_EMAIL) ? true : false;
+
+        return ! empty($emailAddress) && filter_var($emailAddress, FILTER_VALIDATE_EMAIL) ? true : false;
     }
 
     /**
-     * @param $ipAddress
+     * @param string $hash MD5 hash
+     * @return bool
+     */
+    public function isHashValid($hash)
+    {
+
+        return ! empty($hash) && strlen($hash) == 32;
+    }
+
+    /**
+     * @param string $subscriptionSource
+     * @return bool
+     */
+    public function isSubscriptionSourceValid($subscriptionSource)
+    {
+
+        return ! empty($subscriptionSource) && strlen($subscriptionSource) <= 150;
+    }
+
+    /**
+     * @param string $ipAddress
      *
      * @return bool
      */
-    public static function isIPAddressValid($ipAddress)
+    public function isIpAddressValid($ipAddress)
     {
+
         return filter_var($ipAddress, FILTER_VALIDATE_IP) ? true : false;
     }
 
@@ -84,8 +106,9 @@ trait DataValidator
      *
      * @return bool
      */
-    public function isValidGender($gender)
+    public function isGenderValid($gender)
     {
+
         return in_array($gender, $this->availableGenders);
     }
 
@@ -94,9 +117,10 @@ trait DataValidator
      *
      * @return bool
      */
-    public function isValidCountry($countryCode)
+    public function isCountryValid($countryCode)
     {
-        return in_array($countryCode, $this->availableCountries);
+
+        return ! empty($countryCode) && in_array($countryCode, $this->availableCountries);
     }
 
     /**
@@ -104,8 +128,9 @@ trait DataValidator
      *
      * @return bool
      */
-    public function isValidLanguage($languageCode)
+    public function isLanguageValid($languageCode)
     {
+
         return in_array($languageCode, $this->availableLanguages);
     }
 
@@ -114,8 +139,79 @@ trait DataValidator
      *
      * @return bool
      */
-    public function isValidSubscriptionStatus($subscriptionStatus)
+    public function isSubscriptionStatusValid($subscriptionStatus)
     {
         return in_array($subscriptionStatus, $this->availableSubscriptionStatus);
+    }
+
+    /**
+     * @param string $firstName
+     * @return bool
+     */
+    public function isFirstNameValid($firstName)
+    {
+
+        return $this->isNameValid($firstName);
+    }
+
+    /**
+     * @param string $lastName
+     * @return bool
+     */
+    public function isLastNameValid($lastName)
+    {
+
+        return $this->isNameValid($lastName);
+    }
+
+    /**
+     * @param string $name
+     * @return bool
+     */
+    public function isNameValid($name)
+    {
+        $nameLength = strlen($name);
+
+        return ! empty($name) && $nameLength >= 2 && $nameLength <= 64;
+    }
+
+    /**
+     * @param string $address
+     * @return bool
+     */
+    public function isAddressValid($address)
+    {
+
+        return ! empty($address) && strlen($address) <= 150;
+    }
+
+    /**
+     * @param string $zipCode
+     * @return bool
+     */
+    public function isZipCodeValid($zipCode)
+    {
+
+        return ! empty($zipCode) && strlen($zipCode) <= 10;
+    }
+
+    /**
+     * @param string $phone
+     * @return bool
+     */
+    public function isPhoneValid($phone)
+    {
+
+        return ! empty($phone) && strlen($phone) <= 20;
+    }
+
+    /**
+     * @param string $title
+     * @return bool
+     */
+    public function isTitleValid($title)
+    {
+
+        return ! empty($title) && strlen($title) <= 20;
     }
 }
