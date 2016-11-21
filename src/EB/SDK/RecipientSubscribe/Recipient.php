@@ -835,7 +835,7 @@ class Recipient implements \JsonSerializable
         }
 
         // If the zip code exists then it must be valid
-        if (! empty($this->zipCode) && $this->isZipCodeValid($this->zipCode)) {
+        if (! empty($this->zipCode) && ! $this->isZipCodeValid($this->zipCode)) {
             DataValidationException::throwInvalidZipCodeException($this->zipCode);
         }
 
