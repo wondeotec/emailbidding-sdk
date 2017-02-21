@@ -86,5 +86,33 @@ var_dump($recipientSubscribe->post(
 ));
 ```
 
+## Recipient suppression
+Emailbidding recipient suppression API allow you to upload your suppressed contacts to Emailbidding platform. 
+This SDK helps you on the integration providing you an 'EB\SDK\RecipientSuppress\RecipientSuppression' object 
+that you can instantiate with 'EB\SDK\RecipientSuppress\Recipient' objects and then you just need to post the 
+recipients data to Emailbidding.
+Take the following example in consideration:
+
+```php
+<?php
+(...)
+use EB\SDK\RecipientSuppress\RecipientSuppress;
+use EB\SDK\RecipientSuppress\RecipientFactory;
+(...)
+
+// ** RECIPIENT SUPPRESSION ** //
+// Creating a recipient suppression object with my credentials
+$recipientSuppress = new RecipientSuppress('YOUR_PUBLISHER_API_KEY', 'YOUR_PUBLISHER_API_SECRET');
+
+// Posting an simple recipient (minimal information) to Emailbidding API and dumping the result
+var_dump($recipientSuppress->post(
+array(RecipientFactory::createSimpleSuppressedRecipient('email@domain.com')),
+YOUR_LIST,
+Suppression::EMAIL_SUPPRESSION_TYPE
+));
+```
+
+
+
 For more examples you can clone the following project from github:
 https://github.com/wondeotec/sample-emailbidding-sdk
