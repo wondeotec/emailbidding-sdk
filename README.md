@@ -86,5 +86,48 @@ var_dump($recipientSubscribe->post(
 ));
 ```
 
+## Server to Server Submission
+Emailbidding SDK allows you, as an advertiser, to submit your conversion to Emailbidding platform. In order to use this 
+API you need to grab you advertiser EB API key and secret.
+
+The Emailbidding S2S API accepts an HTTP POST with the following JSON as payload:
+```json
+{
+    "conversion":{
+    "subid":"123456",
+    "description":"Test conversion",
+    "details":{
+        "conversion_date":"1970-01-01",
+        "revenue":1.23,
+        "total_conversions":1,
+        "ip_address":"127.0.0.1",
+        "conversion_type":"click",
+        "link_position":1
+    }
+  }
+}
+```
+
+Below, you will find a snippet of PHP code that show you how to send conversion data 
+using Emailbidding conversion API.
+```php
+<?php
+
+(...)
+
+// Set your credentials
+$apiKey       = 'YOUR_API_KEY';
+$apiSecret    = 'YOUR_API_SECRET';
+$advertiserId = 'YOUR_ADVERTISER_ID';
+
+// Set your conversion details
+$conversionDetails = new Details(1.23, new \DateTime(), 1);
+$conversion        = new Conversion('123456', 'Test conversion', $conversionDetails);
+
+// Submit your conversion
+$conversionSubmit  = new ConversionSubmit($advertiserId, $apiKey, $apiSecret);
+$conversionSubmit->post($conversion);
+```
+
 For more examples you can clone the following project from github:
 https://github.com/wondeotec/sample-emailbidding-sdk
