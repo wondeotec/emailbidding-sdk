@@ -1,13 +1,14 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: jtorres
- * Date: 9/14/17
- * Time: 4:25 PM
+ * Unauthorized copying or dissemination of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ *
+ * @author    Jorge Torres <jorge.torres@wondeotec.com>
+ * @copyright Copyright (C) Wondeotec SA - All Rights Reserved
+ * @license   LICENSE.txt
  */
 
 namespace EB\SDK\Enumerable;
-
 
 class ConversionTypeEnumerable
 {
