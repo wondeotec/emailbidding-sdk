@@ -16,7 +16,7 @@ use GuzzleHttp\Exception\ClientException;
 class ConversionSubmit
 {
     /**
-     * @const The HTTP code for a success submit form to Emailbidding recipient subscribe API
+     * @const The HTTP code for a success submit
      */
     const SUCCESS_HTTP_CODE = 201;
 
@@ -83,7 +83,7 @@ class ConversionSubmit
             $response = $this->guzzleClient->post($this->getApiEndpoint(), $requestContent);
         } catch (ClientException $guzzleException) {
             if ($guzzleException->getCode() == 400) {
-                throw new \Exception('Some errors found on this recipient submission: ' . $this->processErrors(
+                throw new \Exception('Some errors found on this conversion submission: ' . $this->processErrors(
                         $guzzleException->getResponse()->getBody()->getContents()
                     ));
             }
@@ -93,7 +93,7 @@ class ConversionSubmit
         // If we do not have a success response, let us process the error a message and throw it as an error
         if ($response->getStatusCode() != self::SUCCESS_HTTP_CODE) {
             throw new \Exception(
-                'Some errors found on this recipient submission: ' . $this->processErrors($response->getBody())
+                'Some errors found on this conversion submission: ' . $this->processErrors($response->getBody())
             );
         }
 
