@@ -395,3 +395,19 @@ language:
     CY-UZ-UZ: { id: 134, name: "Uzbek (Cyrillic) - Uzbekistan" }
     LT-UZ-UZ: { id: 135, name: "Uzbek (Latin) - Uzbekistan" }
     VI-VN: { id: 136, name: "Vietnamese - Vietnam" }
+
+categories:
+    1: { id: 1, name: "Entertainment" }
+    2: { id: 2, name: "Finance" }
+    3: { id: 3, name: "Insurance" }
+    4: { id: 4, name: "Beauty-and-fitness" }
+    5: { id: 5, name: "Food-and-drink" }
+    6: { id: 6, name: "Home-and-utilities" }
+    7: { id: 7, name: "Education-and-jobs" }
+    8: { id: 8, name: "People-and-society" }
+    9: { id: 9, name: "Shopping" }
+    10: { id: 10, name: "Travel-and-tourism" }
+    11: { id: 11, name: "Real-estate" }
+    12: { id: 12, name: "News-and-magazines" }
+    13: { id: 13, name: "Consumer-associations" }
+    14: { id: 14, name: "B2B" }
