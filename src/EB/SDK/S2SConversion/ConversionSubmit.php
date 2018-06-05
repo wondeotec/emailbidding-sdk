@@ -65,19 +65,17 @@ class ConversionSubmit
     }
 
     /**
-     * @param Conversion $conversions
+     * @param Conversion $conversion
      * @return boolean
      * @throws \Exception
      */
-    public function post(Conversion $conversions)
+    public function post(Conversion $conversion)
     {
         $requestContent = [
             'headers' => ['Content-Type' => 'application/json'],
-            'body'    => json_encode(['conversion' => $conversions]),
+            'body'    => json_encode($conversion),
             'timeout' => self::DEFAULT_REQUEST_TIMEOUT
         ];
-
-        var_dump(json_encode(['conversion' => $conversions]));
 
         try {
             $response = $this->guzzleClient->post($this->getApiEndpoint(), $requestContent);
