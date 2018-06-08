@@ -13,7 +13,7 @@ namespace EB\SDK\S2SConversion;
 class Conversion implements \JsonSerializable
 {
     /**
-     * @var string $subId
+     * @var int $subId
      */
     private $subId;
 
@@ -41,7 +41,7 @@ class Conversion implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return int
      */
     public function getSubId()
     {
@@ -49,12 +49,12 @@ class Conversion implements \JsonSerializable
     }
 
     /**
-     * @param string $subId
+     * @param int $subId
      * @return Conversion
      */
     public function setSubId($subId)
     {
-        $this->subId = $subId;
+        $this->subId = (int) $subId;
 
         return $this;
     }
@@ -110,7 +110,7 @@ class Conversion implements \JsonSerializable
         $jsonConversion = [];
 
         if ($this->getSubId() != null) {
-            $jsonConversion['subid'] = $this->getSubId();
+            $jsonConversion['subid'] = (int) $this->getSubId();
         }
 
         if ($this->getDescription() != null) {

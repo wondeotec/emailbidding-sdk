@@ -73,7 +73,7 @@ class ConversionSubmit
     {
         $requestContent = [
             'headers' => ['Content-Type' => 'application/json'],
-            'body'    => json_encode($conversion),
+            'body'    => json_encode(['conversion' => $conversion]),
             'timeout' => self::DEFAULT_REQUEST_TIMEOUT
         ];
 
