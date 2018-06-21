@@ -1015,7 +1015,7 @@ class Recipient implements \JsonSerializable
         }
 
         if ($this->getCategories() != null) {
-            $jsonRecipient['categories'] = $this->getCategories();
+            $jsonRecipient['category_ids'] = $this->getCategories();
         }
 
         return $jsonRecipient;
