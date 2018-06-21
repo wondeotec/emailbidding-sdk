@@ -34,6 +34,7 @@ class DataValidationException extends \Exception
     const INVALID_UNSUBSCRIPTION_IP       = 16;
     const INVALID_LANGUAGE                = 17;
     const INVALID_CONVERSION_TYPE         = 18;
+    const INVALID_CATEGORY                = 19;
 
     /**
      * @var string $type
@@ -237,6 +238,15 @@ class DataValidationException extends \Exception
             self::INVALID_LANGUAGE,
             sprintf('The language code "%s" isn\'t valid!', $language)
         );
+    }
+
+    /**
+     * @param $categories
+     * @throws Exception
+     */
+    public static function throwInvalidCategoryException($categories)
+    {
+        throw new static(self::INVALID_CATEGORY, sprintf('The category "%s" is not valid!', $categories));
     }
 
     /**

@@ -155,6 +155,11 @@ class Recipient implements \JsonSerializable
     protected $language;
 
     /**
+     * @var array $categories
+     */
+    protected $categories;
+
+    /**
      * @return string
      */
     public function getEmailAddress()
@@ -776,6 +781,22 @@ class Recipient implements \JsonSerializable
     }
 
     /**
+     * @return array
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * @param array $categories
+     */
+    public function setCategories($categories)
+    {
+        $this->categories = $categories;
+    }
+
+    /**
      * Validates the recipient data
      *
      * @return bool Returns true if the recipient's data was valid, false otherwise
@@ -864,6 +885,10 @@ class Recipient implements \JsonSerializable
 
         if (! empty($this->language) && ! $this->isLanguageValid($this->language)) {
             DataValidationException::throwInvalidLanguageException($this->language);
+        }
+
+        if (! empty($this->categories) && ! $this->isCategoriesValid($this->categories)) {
+            DataValidationException::throwInvalidCategoryException($this->categories);
         }
 
         if (json_encode($this) === false) {
@@ -987,6 +1012,10 @@ class Recipient implements \JsonSerializable
 
         if ($this->getLanguage() != null) {
             $jsonRecipient['language'] = $this->getLanguage();
+        }
+
+        if ($this->getCategories() != null) {
+            $jsonRecipient['categories'] = $this->getCategories();
         }
 
         return $jsonRecipient;

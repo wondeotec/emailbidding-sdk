@@ -39,6 +39,11 @@ trait DataValidator
     protected $availableSubscriptionStatus;
 
     /**
+     * @var array
+     */
+    protected $availableCategories;
+
+    /**
      * DataValidator constructor.
      */
     public function __construct()
@@ -48,6 +53,7 @@ trait DataValidator
         if (! isset($data['gender'])
             || ! isset($data['country'])
             || ! isset($data['language'])
+            || ! isset($data['categories'])
             || ! isset($data['subscription_status'])
         ) {
             throw new \Exception('Issue detected on resources!');
@@ -56,6 +62,7 @@ trait DataValidator
         $this->availableGenders = array_keys($data['gender']);
         $this->availableCountries = array_keys($data['country']);
         $this->availableLanguages = array_keys($data['language']);
+        $this->availableCategories = array_keys($data['categories']);
         $this->availableSubscriptionStatus = array_keys($data['subscription_status']);
     }
 
@@ -132,6 +139,17 @@ trait DataValidator
     {
 
         return in_array($languageCode, $this->availableLanguages);
+    }
+
+    /**
+     * @param array $categoriesCode
+     *
+     * @return bool
+     */
+    public function isCategoriesValid($categoriesCode)
+    {
+
+        return in_array($categoriesCode, $this->availableCategories);
     }
 
     /**
