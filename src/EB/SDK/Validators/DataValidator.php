@@ -45,6 +45,7 @@ trait DataValidator
 
     /**
      * DataValidator constructor.
+     * @throws \Exception
      */
     public function __construct()
     {
@@ -146,10 +147,16 @@ trait DataValidator
      *
      * @return bool
      */
-    public function isCategoriesValid($categoriesCode)
+    public function isCategoriesValid(array $categoriesCode)
     {
+        foreach ($categoriesCode as $category) {
+            if (! in_array($category, $this->availableCategories)) {
 
-        return in_array($categoriesCode, $this->availableCategories);
+                return false;
+            }
+        }
+
+        return true;
     }
 
     /**
