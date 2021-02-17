@@ -259,142 +259,142 @@ country:
     ZW: { id:  249, name: "Zimbabwe" }
 
 language:
-    AF-ZA: { id: 1, name: "Afrikaans - South Africa" }
-    SQ-AL: { id: 2, name: "Albanian - Albania" }
-    AR-DZ: { id: 3, name: "Arabic - Algeria" }
-    AR-BH: { id: 4, name: "Arabic - Bahrain" }
-    AR-EG: { id: 5, name: "Arabic - Egypt" }
-    AR-IQ: { id: 6, name: "Arabic - Iraq" }
-    AR-JO: { id: 7, name: "Arabic - Jordan" }
-    AR-KW: { id: 8, name: "Arabic - Kuwait" }
-    AR-LB: { id: 9, name: "Arabic - Lebanon" }
-    AR-LY: { id: 10, name: "Arabic - Libya" }
-    AR-MA: { id: 11, name: "Arabic - Morocco" }
-    AR-OM: { id: 12, name: "Arabic - Oman" }
-    AR-QA: { id: 13, name: "Arabic - Qatar" }
-    AR-SA: { id: 14, name: "Arabic - Saudi Arabia" }
-    AR-SY: { id: 15, name: "Arabic - Syria" }
-    AR-TN: { id: 16, name: "Arabic - Tunisia" }
-    AR-AE: { id: 17, name: "Arabic - United Arab Emirates" }
-    AR-YE: { id: 18, name: "Arabic - Yemen" }
-    HY-AM: { id: 19, name: "Armenian - Armenia" }
-    CY-AZ-AZ: { id: 20, name: "Azeri (Cyrillic) - Azerbaijan" }
-    LT-AZ-AZ: { id: 21, name: "Azeri (Latin) - Azerbaijan" }
-    EU-ES: { id: 22, name: "Basque - Basque" }
-    BE-BY: { id: 23, name: "Belarusian - Belarus" }
-    BG-BG: { id: 24, name: "Bulgarian - Bulgaria" }
-    CA-ES: { id: 25, name: "Catalan - Catalan" }
-    ZH-CN: { id: 26, name: "Chinese - China" }
-    ZH-HK: { id: 27, name: "Chinese - Hong Kong SAR" }
-    ZH-MO: { id: 28, name: "Chinese - Macau SAR" }
-    ZH-SG: { id: 29, name: "Chinese - Singapore" }
-    ZH-TW: { id: 30, name: "Chinese - Taiwan" }
-    ZH-CHS: { id: 31, name: "Chinese (Simplified)" }
-    ZH-CHT: { id: 32, name: "Chinese (Traditional)" }
-    HR-HR: { id: 33, name: "Croatian - Croatia" }
-    CS-CZ: { id: 34, name: "Czech - Czech Republic" }
-    DA-DK: { id: 35, name: "Danish - Denmark" }
-    DIV-MV: { id: 36, name: "Dhivehi - Maldives" }
-    NL-BE: { id: 37, name: "Dutch - Belgium" }
-    NL-NL: { id: 38, name: "Dutch - The Netherlands" }
-    EN-AU: { id: 39, name: "English - Australia" }
-    EN-BZ: { id: 40, name: "English - Belize" }
-    EN-CA: { id: 41, name: "English - Canada" }
-    EN-CB: { id: 42, name: "English - Caribbean" }
-    EN-IE: { id: 43, name: "English - Ireland" }
-    EN-JM: { id: 44, name: "English - Jamaica" }
-    EN-NZ: { id: 45, name: "English - New Zealand" }
-    EN-PH: { id: 46, name: "English - Philippines" }
-    EN-ZA: { id: 47, name: "English - South Africa" }
-    EN-TT: { id: 48, name: "English - Trinidad and Tobago" }
-    EN-GB: { id: 49, name: "English - United Kingdom" }
-    EN-US: { id: 50, name: "English - United States" }
-    EN-ZW: { id: 51, name: "English - Zimbabwe" }
-    ET-EE: { id: 52, name: "Estonian - Estonia" }
-    FO-FO: { id: 53, name: "Faroese - Faroe Islands" }
-    FA-IR: { id: 54, name: "Farsi - Iran" }
-    FI-FI: { id: 55, name: "Finnish - Finland" }
-    FR-BE: { id: 56, name: "French - Belgium" }
-    FR-CA: { id: 57, name: "French - Canada" }
-    FR-FR: { id: 58, name: "French - France" }
-    FR-LU: { id: 59, name: "French - Luxembourg" }
-    FR-MC: { id: 60, name: "French - Monaco" }
-    FR-CH: { id: 61, name: "French - Switzerland" }
-    GL-ES: { id: 62, name: "Galician - Galician" }
-    KA-GE: { id: 63, name: "Georgian - Georgia" }
-    DE-AT: { id: 64, name: "German - Austria" }
-    DE-DE: { id: 65, name: "German - Germany" }
-    DE-LI: { id: 66, name: "German - Liechtenstein" }
-    DE-LU: { id: 67, name: "German - Luxembourg" }
-    DE-CH: { id: 68, name: "German - Switzerland" }
-    EL-GR: { id: 69, name: "Greek - Greece" }
-    GU-IN: { id: 70, name: "Gujarati - India" }
-    HE-IL: { id: 71, name: "Hebrew - Israel" }
-    HI-IN: { id: 72, name: "Hindi - India" }
-    HU-HU: { id: 73, name: "Hungarian - Hungary" }
-    IS-IS: { id: 74, name: "Icelandic - Iceland" }
-    ID-ID: { id: 75, name: "Indonesian - Indonesia" }
-    IT-IT: { id: 76, name: "Italian - Italy" }
-    IT-CH: { id: 77, name: "Italian - Switzerland" }
-    JA-JP: { id: 78, name: "Japanese - Japan" }
-    KN-IN: { id: 79, name: "Kannada - India" }
-    KK-KZ: { id: 80, name: "Kazakh - Kazakhstan" }
-    KOK-IN: { id: 81, name: "Konkani - India" }
-    KO-KR: { id: 82, name: "Korean - Korea" }
-    KY-KZ: { id: 83, name: "Kyrgyz - Kazakhstan" }
-    LV-LV: { id: 84, name: "Latvian - Latvia" }
-    LT-LT: { id: 85, name: "Lithuanian - Lithuania" }
-    MK-MK: { id: 86, name: "Macedonian (FYROM)" }
-    MS-BN: { id: 87, name: "Malay - Brunei" }
-    MS-MY: { id: 88, name: "Malay - Malaysia" }
-    MR-IN: { id: 89, name: "Marathi - India" }
-    MN-MN: { id: 90, name: "Mongolian - Mongolia" }
-    NB-NO: { id: 91, name: "Norwegian (Bokmål) - Norway" }
-    NN-NO: { id: 92, name: "Norwegian (Nynorsk) - Norway" }
-    PL-PL: { id: 93, name: "Polish - Poland" }
-    PT-BR: { id: 94, name: "Portuguese - Brazil" }
-    PT-PT: { id: 95, name: "Portuguese - Portugal" }
-    PA-IN: { id: 96, name: "Punjabi - India" }
-    RO-RO: { id: 97, name: "Romanian - Romania" }
-    RU-RU: { id: 98, name: "Russian - Russia" }
-    SA-IN: { id: 99, name: "Sanskrit - India" }
-    CY-SR-SP: { id: 100, name: "Serbian (Cyrillic) - Serbia" }
-    LT-SR-SP: { id: 101, name: "Serbian (Latin) - Serbia" }
-    SK-SK: { id: 102, name: "Slovak - Slovakia" }
-    SL-SI: { id: 103, name: "Slovenian - Slovenia" }
-    ES-AR: { id: 104, name: "Spanish - Argentina" }
-    ES-BO: { id: 105, name: "Spanish - Bolivia" }
-    ES-CL: { id: 106, name: "Spanish - Chile" }
-    ES-CO: { id: 107, name: "Spanish - Colombia" }
-    ES-CR: { id: 108, name: "Spanish - Costa Rica" }
-    ES-DO: { id: 109, name: "Spanish - Dominican Republic" }
-    ES-EC: { id: 110, name: "Spanish - Ecuador" }
-    ES-SV: { id: 111, name: "Spanish - El Salvador" }
-    ES-GT: { id: 112, name: "Spanish - Guatemala" }
-    ES-HN: { id: 113, name: "Spanish - Honduras" }
-    ES-MX: { id: 114, name: "Spanish - Mexico" }
-    ES-NI: { id: 115, name: "Spanish - Nicaragua" }
-    ES-PA: { id: 116, name: "Spanish - Panama" }
-    ES-PY: { id: 117, name: "Spanish - Paraguay" }
-    ES-PE: { id: 118, name: "Spanish - Peru" }
-    ES-PR: { id: 119, name: "Spanish - Puerto Rico" }
-    ES-ES: { id: 120, name: "Spanish - Spain" }
-    ES-UY: { id: 121, name: "Spanish - Uruguay" }
-    ES-VE: { id: 122, name: "Spanish - Venezuela" }
-    SW-KE: { id: 123, name: "Swahili - Kenya" }
-    SV-FI: { id: 124, name: "Swedish - Finland" }
-    SV-SE: { id: 125, name: "Swedish - Sweden" }
-    SYR-SY: { id: 126, name: "Syriac - Syria" }
-    TA-IN: { id: 127, name: "Tamil - India" }
-    TT-RU: { id: 128, name: "Tatar - Russia" }
-    TE-IN: { id: 129, name: "Telugu - India" }
-    TH-TH: { id: 130, name: "Thai - Thailand" }
-    TR-TR: { id: 131, name: "Turkish - Turkey" }
-    UK-UA: { id: 132, name: "Ukrainian - Ukraine" }
-    UR-PK: { id: 133, name: "Urdu - Pakistan" }
-    CY-UZ-UZ: { id: 134, name: "Uzbek (Cyrillic) - Uzbekistan" }
-    LT-UZ-UZ: { id: 135, name: "Uzbek (Latin) - Uzbekistan" }
-    VI-VN: { id: 136, name: "Vietnamese - Vietnam" }
+    af-ZA: { id: 1, name: "Afrikaans - South Africa" }
+    sq-AL: { id: 2, name: "Albanian - Albania" }
+    ar-DZ: { id: 3, name: "Arabic - Algeria" }
+    ar-BH: { id: 4, name: "Arabic - Bahrain" }
+    ar-EG: { id: 5, name: "Arabic - Egypt" }
+    ar-IQ: { id: 6, name: "Arabic - Iraq" }
+    ar-JO: { id: 7, name: "Arabic - Jordan" }
+    ar-KW: { id: 8, name: "Arabic - Kuwait" }
+    ar-LB: { id: 9, name: "Arabic - Lebanon" }
+    ar-LY: { id: 10, name: "Arabic - Libya" }
+    ar-MA: { id: 11, name: "Arabic - Morocco" }
+    ar-OM: { id: 12, name: "Arabic - Oman" }
+    ar-QA: { id: 13, name: "Arabic - Qatar" }
+    ar-SA: { id: 14, name: "Arabic - Saudi Arabia" }
+    ar-SY: { id: 15, name: "Arabic - Syria" }
+    ar-TN: { id: 16, name: "Arabic - Tunisia" }
+    ar-AE: { id: 17, name: "Arabic - United Arab Emirates" }
+    ar-YE: { id: 18, name: "Arabic - Yemen" }
+    hy-AM: { id: 19, name: "Armenian - Armenia" }
+    cy-AZ-AZ: { id: 20, name: "Azeri (Cyrillic) - Azerbaijan" }
+    lt-AZ-AZ: { id: 21, name: "Azeri (Latin) - Azerbaijan" }
+    eu-ES: { id: 22, name: "Basque - Basque" }
+    be-BY: { id: 23, name: "Belarusian - Belarus" }
+    bg-BG: { id: 24, name: "Bulgarian - Bulgaria" }
+    ca-ES: { id: 25, name: "Catalan - Catalan" }
+    zh-CN: { id: 26, name: "Chinese - China" }
+    zh-HK: { id: 27, name: "Chinese - Hong Kong SAR" }
+    zh-MO: { id: 28, name: "Chinese - Macau SAR" }
+    zh-SG: { id: 29, name: "Chinese - Singapore" }
+    zh-TW: { id: 30, name: "Chinese - Taiwan" }
+    zh-CHS: { id: 31, name: "Chinese (Simplified)" }
+    zh-CHT: { id: 32, name: "Chinese (Traditional)" }
+    hr-HR: { id: 33, name: "Croatian - Croatia" }
+    cs-CZ: { id: 34, name: "Czech - Czech Republic" }
+    da-DK: { id: 35, name: "Danish - Denmark" }
+    div-MV: { id: 36, name: "Dhivehi - Maldives" }
+    nl-BE: { id: 37, name: "Dutch - Belgium" }
+    nl-NL: { id: 38, name: "Dutch - The Netherlands" }
+    en-AU: { id: 39, name: "English - Australia" }
+    en-BZ: { id: 40, name: "English - Belize" }
+    en-CA: { id: 41, name: "English - Canada" }
+    en-CB: { id: 42, name: "English - Caribbean" }
+    en-IE: { id: 43, name: "English - Ireland" }
+    en-JM: { id: 44, name: "English - Jamaica" }
+    en-NZ: { id: 45, name: "English - New Zealand" }
+    en-PH: { id: 46, name: "English - Philippines" }
+    en-ZA: { id: 47, name: "English - South Africa" }
+    en-TT: { id: 48, name: "English - Trinidad and Tobago" }
+    en-GB: { id: 49, name: "English - United Kingdom" }
+    en-US: { id: 50, name: "English - United States" }
+    en-ZW: { id: 51, name: "English - Zimbabwe" }
+    et-EE: { id: 52, name: "Estonian - Estonia" }
+    fo-FO: { id: 53, name: "Faroese - Faroe Islands" }
+    fa-IR: { id: 54, name: "Farsi - Iran" }
+    fi-FI: { id: 55, name: "Finnish - Finland" }
+    fr-BE: { id: 56, name: "French - Belgium" }
+    fr-CA: { id: 57, name: "French - Canada" }
+    fr-FR: { id: 58, name: "French - France" }
+    fr-LU: { id: 59, name: "French - Luxembourg" }
+    fr-MC: { id: 60, name: "French - Monaco" }
+    fr-CH: { id: 61, name: "French - Switzerland" }
+    gl-ES: { id: 62, name: "Galician - Galician" }
+    ka-GE: { id: 63, name: "Georgian - Georgia" }
+    de-AT: { id: 64, name: "German - Austria" }
+    de-DE: { id: 65, name: "German - Germany" }
+    de-LI: { id: 66, name: "German - Liechtenstein" }
+    de-LU: { id: 67, name: "German - Luxembourg" }
+    de-CH: { id: 68, name: "German - Switzerland" }
+    el-GR: { id: 69, name: "Greek - Greece" }
+    gu-IN: { id: 70, name: "Gujarati - India" }
+    he-IL: { id: 71, name: "Hebrew - Israel" }
+    hi-IN: { id: 72, name: "Hindi - India" }
+    hu-HU: { id: 73, name: "Hungarian - Hungary" }
+    is-IS: { id: 74, name: "Icelandic - Iceland" }
+    id-ID: { id: 75, name: "Indonesian - Indonesia" }
+    it-IT: { id: 76, name: "Italian - Italy" }
+    it-CH: { id: 77, name: "Italian - Switzerland" }
+    ja-JP: { id: 78, name: "Japanese - Japan" }
+    kn-IN: { id: 79, name: "Kannada - India" }
+    kk-KZ: { id: 80, name: "Kazakh - Kazakhstan" }
+    kok-IN: { id: 81, name: "Konkani - India" }
+    ko-KR: { id: 82, name: "Korean - Korea" }
+    ky-KZ: { id: 83, name: "Kyrgyz - Kazakhstan" }
+    lv-LV: { id: 84, name: "Latvian - Latvia" }
+    lt-LT: { id: 85, name: "Lithuanian - Lithuania" }
+    mk-MK: { id: 86, name: "Macedonian (FYROM)" }
+    ms-BN: { id: 87, name: "Malay - Brunei" }
+    ms-MY: { id: 88, name: "Malay - Malaysia" }
+    mr-IN: { id: 89, name: "Marathi - India" }
+    mn-MN: { id: 90, name: "Mongolian - Mongolia" }
+    nb-NO: { id: 91, name: "Norwegian (Bokmål) - Norway" }
+    nn-NO: { id: 92, name: "Norwegian (Nynorsk) - Norway" }
+    pl-PL: { id: 93, name: "Polish - Poland" }
+    pt-BR: { id: 94, name: "Portuguese - Brazil" }
+    pt-PT: { id: 95, name: "Portuguese - Portugal" }
+    pa-IN: { id: 96, name: "Punjabi - India" }
+    ro-RO: { id: 97, name: "Romanian - Romania" }
+    ru-RU: { id: 98, name: "Russian - Russia" }
+    sa-IN: { id: 99, name: "Sanskrit - India" }
+    cy-SR-SP: { id: 100, name: "Serbian (Cyrillic) - Serbia" }
+    lt-SR-SP: { id: 101, name: "Serbian (Latin) - Serbia" }
+    sk-SK: { id: 102, name: "Slovak - Slovakia" }
+    sl-SI: { id: 103, name: "Slovenian - Slovenia" }
+    es-AR: { id: 104, name: "Spanish - Argentina" }
+    es-BO: { id: 105, name: "Spanish - Bolivia" }
+    es-CL: { id: 106, name: "Spanish - Chile" }
+    es-CO: { id: 107, name: "Spanish - Colombia" }
+    es-CR: { id: 108, name: "Spanish - Costa Rica" }
+    es-DO: { id: 109, name: "Spanish - Dominican Republic" }
+    es-EC: { id: 110, name: "Spanish - Ecuador" }
+    es-SV: { id: 111, name: "Spanish - El Salvador" }
+    es-GT: { id: 112, name: "Spanish - Guatemala" }
+    es-HN: { id: 113, name: "Spanish - Honduras" }
+    es-MX: { id: 114, name: "Spanish - Mexico" }
+    es-NI: { id: 115, name: "Spanish - Nicaragua" }
+    es-PA: { id: 116, name: "Spanish - Panama" }
+    es-PY: { id: 117, name: "Spanish - Paraguay" }
+    es-PE: { id: 118, name: "Spanish - Peru" }
+    es-PR: { id: 119, name: "Spanish - Puerto Rico" }
+    es-ES: { id: 120, name: "Spanish - Spain" }
+    es-UY: { id: 121, name: "Spanish - Uruguay" }
+    es-VE: { id: 122, name: "Spanish - Venezuela" }
+    sw-KE: { id: 123, name: "Swahili - Kenya" }
+    sv-FI: { id: 124, name: "Swedish - Finland" }
+    sv-SE: { id: 125, name: "Swedish - Sweden" }
+    syr-SY: { id: 126, name: "Syriac - Syria" }
+    ta-IN: { id: 127, name: "Tamil - India" }
+    tt-RU: { id: 128, name: "Tatar - Russia" }
+    te-IN: { id: 129, name: "Telugu - India" }
+    th-TH: { id: 130, name: "Thai - Thailand" }
+    tr-TR: { id: 131, name: "Turkish - Turkey" }
+    uk-UA: { id: 132, name: "Ukrainian - Ukraine" }
+    ur-PK: { id: 133, name: "Urdu - Pakistan" }
+    cy-UZ-UZ: { id: 134, name: "Uzbek (Cyrillic) - Uzbekistan" }
+    lt-UZ-UZ: { id: 135, name: "Uzbek (Latin) - Uzbekistan" }
+    vi-VN: { id: 136, name: "Vietnamese - Vietnam" }
 
 categories:
     1: { id: 1, name: "Entertainment" }
